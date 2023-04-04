@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block tableForm %}
+<div style=" justify-content: center; margin-left: 150px;">
+        
+          <div class="card">
+          <div  style="display: flex;align-items: center;justify-content: center;margin-top: 15px; padding: 10px;">
+
+            <div class="card-body">
+             <center> <h1 class="card-title" >Gallery</h1> </center>
+
+
+
+    
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id Gallery</th>
+                <td>{{ galery.idGalerie }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ galery.titreGalerie }}</td>
+            </tr>
+        </tbody>
+    </table>
+                   <div class="button-container">
+  <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_index') }}'">Back to List</button>
+  <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_edit', {'idGalerie': galery.idGalerie}) }}'">Edit</button>
+</div>
+
+
+    {{ include('galeries/_delete_form.html.twig') }}
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

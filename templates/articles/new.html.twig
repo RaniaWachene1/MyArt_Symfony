@@ -1,0 +1,12 @@
+{% extends 'artist.html.twig' %}
+
+
+    
+{% block tableForm %}
+   
+
+    {{ include('articles/_form.html.twig') }}
+
+    <a href="{{ path('app_articles_index') }}">back to list</a>
+
+{% endblock %}
