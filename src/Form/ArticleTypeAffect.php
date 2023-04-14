@@ -19,23 +19,9 @@ class ArticleTypeAffect extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {$article = $options['data'] ?? null;
         $builder
-            ->add('titreArticle',TextType::class,['attr'=>['placeholder'=>'Article Title','class'=>'form-control']])
-            ->add('idGalerie',EntityType::class,['class'=>Galeries::class,'choice_label'=>'titreGalerie','attr'=>['class'=>'form-control']])
-            ->add('fileFile', VichFileType::class, [
-                'label' => 'File',
-                'required' => false,
-                
-    'mapped' => false,
-                'data_class' => null,
-                'download_label' => function (Articles $article) {
-                    return $article->getFileFile() ? $article->getFileFile()->getOriginalName() : '';
-                },
-                'attr' => [
-                    // Si vous voulez masquer le champ de téléchargement de fichier existant
-                    // utilisez l'option 'style' pour définir l'attribut 'display:none'
-                    // 'style' => 'display:none;',
-                ],
-            ])
+            ->add('titreArticle',TextType::class,['label'=>'Article','disabled'=>true,'attr'=>['placeholder'=>'Article Title','class'=>'form-control']])
+            ->add('idGalerie',EntityType::class,['label'=>'Gallery','class'=>Galeries::class,'choice_label'=>'titreGalerie','attr'=>['class'=>'form-control']])
+
         ;
     }
 

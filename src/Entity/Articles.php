@@ -40,7 +40,7 @@ class Articles
      *
      * @ORM\Column(name="nom_artiste", type="string", length=255, nullable=false)
      * * @Assert\Regex(
-     *     pattern="/^[a-zA-Z]+$/",
+     *     pattern="/^[a-zA-ZÀ-ÖØ-öø-ÿ\s]+$/",
      *     message="Artist name should contain only alphabetical letters"
      * )
      * @Assert\NotBlank(message="Please enter the artist  name")
@@ -79,14 +79,16 @@ class Articles
     /**
      * @var string
      *
-     * @ORM\Column(name="photo_article", type="string", length=255, nullable=false)
+     * @ORM\Column(name="photo_article", type="string", length=255, nullable=true)
      * 
      */
-    private $photoArticle;
-    #[Vich\UploadableField(mapping: 'articles' , fileNameProperty:"photoArticle")]
+    
+    private $photoArticle = '';
+    #[Vich\UploadableField(mapping: 'articles' , fileNameProperty:'photoArticle')]
     /**
-     * @var File|null
-     * @Assert\NotBlank(message="Please enter the article file")
+     * @var File
+     * 
+     *
      * 
      */
     private $fileFile;
@@ -108,7 +110,7 @@ class Articles
     /**
      * @var \Galeries
      *
-     * @ORM\ManyToOne(targetEntity="Galeries")
+     * @ORM\ManyToOne(targetEntity="Galeries",cascade={"all"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_galerie", referencedColumnName="id_galerie")
      * })
@@ -284,6 +286,36 @@ class Articles
         $this->idPanier->removeElement($idPanier);
 
         return $this;
+    }
+    public function serialize()
+    {return serialize(array(
+        $this->idArticle,
+        $this->nomArtiste,
+        $this->titreArticle,
+        $this->prixArticle,
+        $this->descArticle,
+        $this->idUser,
+        $this->rate,
+        $this->quantiteArticle,
+        $this->idGalerie,
+       ));
+
+
+    }
+
+    public function unserialize($serialized)
+    {
+        list(
+            $this->idArticle,
+            $this->nomArtiste,
+            $this->titreArticle,
+            $this->prixArticle,
+            $this->descArticle,
+            $this->idUser,
+            $this->rate,
+            $this->quantiteArticle,
+            $this->idGalerie,
+            ) = unserialize($serialized);
     }
 
 }

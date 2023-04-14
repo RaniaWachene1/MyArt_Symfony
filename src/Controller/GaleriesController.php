@@ -71,17 +71,18 @@ class GaleriesController extends AbstractController
     {
         $form = $this->createForm(GaleriesType::class, $galery);
         $form->handleRequest($request);
-
+        $articles = $this->getDoctrine()->getRepository(Articles::class)->findBy(['idGalerie' => $galery]);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
             $flashy->success('Gallery successfully updated', 5000);
 
-            return $this->redirectToRoute('app_galeries_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_galeries_show', ['idGalerie'=>$galery->getIdGalerie()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('galeries/edit.html.twig', [
             'galery' => $galery,
             'form' => $form,
+            'articles'=>$articles,
         ]);
     }
     #[Route('/affect/{idGalerie}', name: 'app_galeries_delete1', methods: ['POST','GET'])]
@@ -97,12 +98,13 @@ class GaleriesController extends AbstractController
             //$newGalerie = $form->get('idGalerie')->getData();
             foreach ($data['articles'] as $article){
               // $article->setIdGalerie($newGalerie);
+                $entityManager->remove($galery);
                $entityManager->flush();
             
             }
             
             $flashy->success('Articles moved successfully!');
-            return $this->redirectToRoute('app_galeries_show', ['idGalerie'=>$galery->getIdGalerie()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_galeries_index', [], Response::HTTP_SEE_OTHER);
         }
         return $this->render('galeries/affect.html.twig',['form'=>$form->createView()]);
     }
@@ -112,7 +114,7 @@ class GaleriesController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$galery->getIdGalerie(), $request->request->get('_token'))) {
             $entityManager->remove($galery);
             $entityManager->flush();
-            $flashy->success('Article successfully deleted', 5000);
+            $flashy->success('Gallery successfully deleted', 5000);
         }
 
         return $this->redirectToRoute('app_galeries_index', [], Response::HTTP_SEE_OTHER);
