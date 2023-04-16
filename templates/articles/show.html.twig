@@ -65,9 +65,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_articles_index') }}">back to list</a>
-
-    <a href="{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}">edit</a>
+  <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}'">Edit</button>
   
 
 
@@ -75,5 +73,8 @@
     </div>
 </div>
 </div>
+</div>
+<div  style="  margin-top: 10px;">
+<button class="btn btn-info btn-sm " onclick="window.location.href='{{ path('app_articles_index') }}'"> <i class="bi bi-arrow-bar-left"></i> Back to List </button>
 </div>
 {% endblock %}

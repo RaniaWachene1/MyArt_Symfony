@@ -1,0 +1,49 @@
+<div style=" justify-content: center; margin-left: 150px;">
+        
+          <div class="card">
+          <div  style="display: flex;align-items: center;justify-content: center;margin-top: 15px; padding: 10px;">
+
+            <div class="card-body">
+             <center> <h1 class="card-title" >Create new Article</h1> </center>
+              {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.titreArticle)}}
+    </div>
+
+      <div class="col-12">
+      <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.nomArtiste)}}
+    </div>
+          <div class="col-12">
+          <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.prixArticle)}}
+    </div>
+          <div class="col-12">
+          <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.descArticle)}}
+    </div>
+          <div class="col-12">
+          <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.quantiteArticle)}}
+    </div>
+    <div class="col-12">
+        <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.idGalerie)}}
+    </div>
+        <div class="col-12">
+        <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.fileFile)}}
+
+    </div >
+        
+         <div class="text-center" style="  margin-top: 50px;">
+                  <button type="submit" class="btn btn-primary">Update</button>
+               
+                </div>
+
+{{ form_end(form) }}
+</div>
+</div>
+</div>
+</div>

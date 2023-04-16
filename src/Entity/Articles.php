@@ -79,15 +79,13 @@ class Articles
     /**
      * @var string
      *
-     * @ORM\Column(name="photo_article", type="string", length=255, nullable=true)
+     * @ORM\Column(name="photo_article", type="string", length=255, nullable=false)
      * 
      */
-    
-    private $photoArticle = '';
-    #[Vich\UploadableField(mapping: 'articles' , fileNameProperty:'photoArticle')]
+    private $photoArticle;
+    #[Vich\UploadableField(mapping: 'articles' , fileNameProperty:"photoArticle")]
     /**
-     * @var File
-     * 
+     * @var File|null
      *
      * 
      */
@@ -286,36 +284,6 @@ class Articles
         $this->idPanier->removeElement($idPanier);
 
         return $this;
-    }
-    public function serialize()
-    {return serialize(array(
-        $this->idArticle,
-        $this->nomArtiste,
-        $this->titreArticle,
-        $this->prixArticle,
-        $this->descArticle,
-        $this->idUser,
-        $this->rate,
-        $this->quantiteArticle,
-        $this->idGalerie,
-       ));
-
-
-    }
-
-    public function unserialize($serialized)
-    {
-        list(
-            $this->idArticle,
-            $this->nomArtiste,
-            $this->titreArticle,
-            $this->prixArticle,
-            $this->descArticle,
-            $this->idUser,
-            $this->rate,
-            $this->quantiteArticle,
-            $this->idGalerie,
-            ) = unserialize($serialized);
     }
 
 }

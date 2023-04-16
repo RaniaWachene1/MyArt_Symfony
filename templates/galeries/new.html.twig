@@ -7,7 +7,8 @@
 {% block tableForm %}
 
     {{ include('galeries/_form.html.twig') }}
-
-    <a href="{{ path('app_galeries_index') }}">back to list</a>
+<div  style="  margin-top: 10px;">
+      <button class="btn btn-info btn-sm" onclick="window.location.href='{{ path('app_galeries_index') }}'"> <i class="bi bi-arrow-bar-left"></i> Back to List  </button>
+</div>
 {% endblock %}
 

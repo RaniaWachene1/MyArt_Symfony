@@ -24,16 +24,28 @@
             </tr>
         </tbody>
     </table>
-                   <div class="button-container">
-  <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_index') }}'">Back to List</button>
-  <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_edit', {'idGalerie': galery.idGalerie}) }}'">Edit</button>
+                   <div class="button-container" style="  margin-top: 20px;">
+                     <button class="btn btn-success btn-sm " style="  margin-left: 210px;" onclick="window.location.href='{{ path('app_galeries_edit', {'idGalerie': galery.idGalerie}) }}'">Edit <i class="bi bi-pencil-square"></i></button>
+
+<div class="text-center" >
+{% if articles is empty %}
+
+ {{ include('galeries/_delete_form.html.twig') }}
+               {% else %}
+                           <button class="btn btn-danger btn-sm  " style="  margin-right: 210px;"  onclick="window.location.href='{{ path('app_galeries_delete1',{'idGalerie': galery.idGalerie}) }}'">Delete <i class="bi bi-trash"></i></button>               
+
+               {% endif %}
+                </div>
 </div>
 
 
-    {{ include('galeries/_delete_form.html.twig') }}
     </div>
 </div>
 </div>
+</div>
+</div>
+  <button class="btn btn-info btn-sm" onclick="window.location.href='{{ path('app_galeries_index') }}'"> <i class="bi bi-arrow-bar-left"></i> Back to List  </button>
+
 </div>
 </div>
 {% endblock %}

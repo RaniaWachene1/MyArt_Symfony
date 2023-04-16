@@ -11,27 +11,23 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+               
                 <th>Title</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Quantity</th>
+             
                 <th>Article</th>
-                <th>User</th>
-                <th>Rate</th>
+                <th>Gallery</th>
+             
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.idArticle }}</td>
+                
                 <td>{{ article.titreArticle }}</td>
                 <td>{{ article.nomArtiste }}</td>
-                <td>{{ article.prixArticle }}</td>
-                <td>{{ article.descArticle }}</td>
-                <td>{{ article.quantiteArticle }}</td>
+        
                 <td>
                       {% if article.photoArticle|lower matches '/(pdf)$/' %}
                         <object data="{{ vich_uploader_asset(article, 'fileFile') }}" type="application/pdf" width="80" height="80    ">
@@ -46,11 +42,12 @@
                     <img src="{{vich_uploader_asset(article,'fileFile') }}" width="80" height="80">
                     {% endif %}
                     </td>
-                <td>{{ article.idUser }}</td>
-                <td>{{ article.rate }}</td>
+                    <td>{{article.idGalerie.titreGalerie}}</td>
+             
                 <td>
-                    <a href="{{ path('app_articles_show', {'idArticle': article.idArticle}) }}">show</a>
-    
+                    
+                <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_show', {'idArticle': article.idArticle}) }}'">Show</button>
+
                 </td>
             </tr>
         {% else %}
