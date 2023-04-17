@@ -82,7 +82,15 @@ class ArticlesController extends AbstractController
             'form' => $form,
         ]);
     }
-
+    #[Route('/articles/{idArticle}', name: 'app_articles_details', methods: ['GET'])]
+    public function details(Articles $article): Response
+    {
+        return $this->render('articles/indexfront.html.twig', [
+            'article' => $article,
+        ]);
+    }
+    
+    
     #[Route('/{idArticle}', name: 'app_articles_show', methods: ['GET'])]
     public function show(Articles $article): Response
     {
@@ -96,11 +104,14 @@ class ArticlesController extends AbstractController
     {
         $form = $this->createForm(ArticlesType::class, $article);
         $form->handleRequest($request);
+    
         if ($form->isSubmitted() && $form->isValid()) {
+           
+            
             $entityManager->flush();
             $flashy->success('Article successfully updated', 5000);
 
-            return $this->redirectToRoute('app_articles_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_articles_show', ['idArticle'=>$article->getIdArticle()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('articles/edit.html.twig', [
@@ -113,6 +124,7 @@ class ArticlesController extends AbstractController
     public function delete(Request $request, Articles $article, EntityManagerInterface $entityManager,FlashyNotifier $flashy): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getIdArticle(), $request->request->get('_token'))) {
+            $article->setPhotoArticle($data['photoArticle'] ?? '');
             $entityManager->remove($article);
             $entityManager->flush();
             $flashy->success('Article successfully deleted', 5000);

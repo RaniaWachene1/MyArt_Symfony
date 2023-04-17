@@ -43,9 +43,9 @@
                     </td>
                 <td>{{article.idGalerie.titreGalerie}}</td>
                 <td>
-                  <button class="btn btn-warning btn-sm  " style="  margin-left: 20px;" onclick="window.location.href='{{ path('app_articles_show', {'idArticle': article.idArticle}) }}'"> Show <i class="bi bi-eye"></i></button>
-
-                 <button class="btn btn-success btn-sm  " style="  margin-left: 20px;" onclick="window.location.href='{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}'">Edit <i class="bi bi-pencil-square"></i></button>
+                  <button class="btn btn-info btn-sm  " style="  margin-left: 20px;" onclick="window.location.href='{{ path('app_articles_show', {'idArticle': article.idArticle}) }}'"> Show <i class="bi bi-eye"></i></button>
+<div  style="margin-top: 10px;">     </div> 
+                 <button class="btn btn-info btn-sm  " style="  margin-left: 20px;" onclick="window.location.href='{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}'">Edit <i class="bi bi-pencil-square"></i></button>
 
                 </td>
             </tr>
@@ -57,7 +57,7 @@
         </tbody>
     </table>
     <div class="text-center" style="  margin-top: 50px;">
-<button class="btn btn-primary"  onclick="window.location.href='{{ path('app_articles_new') }}'">Create new </button>
+<button class="btn btn-primary"  onclick="window.location.href='{{ path('app_articles_new') }}'"> <i class="bi bi-plus"></i>Create new Article </button>
 
        </div>
     
