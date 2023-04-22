@@ -26,11 +26,6 @@
                 <td>{{ article.nomArtiste }}</td>
             </tr>
             <tr>
-                <th>Gallery</th>
-                <td>{{article.idGalerie.titreGalerie}}</td>
-            </tr>
-            
-            <tr>
                 <th>Price</th>
                 <td>{{ article.prixArticle }}</td>
             </tr>
@@ -60,17 +55,24 @@
                     </td>
             </tr>
             <tr>
-                <th>IdUser</th>
-                <td>{{ article.idUser }}</td>
-            </tr>
+                <th scope="col">Comments</th>
             <tr>
-                <th>Rate</th>
-                <td>{{ article.rate }}</td>
+                <th>Content</th>
+                <th>User</th>
             </tr>
+            {% for comment in comments %}
+                <tr>
+                    <td>{{ comment.contenu}}</td>
+                    <td>{{ comment.idUser.prenomUser }} {{ comment.idUser.nomUser }}</td>
+                </tr>
+
+            {% endfor %}
+            </tr>
+
         </tbody>
     </table>
 
-  <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}'">Edit</button>
+ <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}'">Edit</button>
   
 
 

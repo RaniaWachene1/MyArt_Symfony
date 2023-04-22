@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -12,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Articles
  *
- * @ORM\Table(name="articles", uniqueConstraints={@ORM\UniqueConstraint(name="id_article", columns={"id_article"})}, indexes={@ORM\Index(name="FKAG", columns={"id_galerie"})})
+ * @ORM\Table(name="articles", indexes={@ORM\Index(name="fk_galeriearticle", columns={"id_galerie"}), @ORM\Index(name="fk_articleuser", columns={"id_user"})})
  * @ORM\Entity
  */
 #[Vich\Uploadable]
@@ -26,6 +25,7 @@ class Articles
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idArticle;
+
 
     /**
      * @var string
@@ -54,7 +54,7 @@ class Articles
      * @Assert\NotBlank(message="Please enter the article price")
      * @Assert\Positive(message="The price should be greater than zero")
      * @Assert\Regex("/^[0-9]+(\.[0-9]+)?$/")
-     * 
+     *
      */
     private $prixArticle;
 
@@ -80,23 +80,24 @@ class Articles
      * @var string
      *
      * @ORM\Column(name="photo_article", type="string", length=255, nullable=true)
-     * 
-     */
-    
-    private $photoArticle = '';
-    #[Vich\UploadableField(mapping: 'articles' , fileNameProperty:'photoArticle')]
-    /**
-     * @var File
-     * 
      *
-     * 
+     */
+    private $photoArticle = '';
+    #[Vich\UploadableField(mapping: 'images' , fileNameProperty:"photoArticle")]
+    /**
+     * @var File|null
+     *
+     *
      */
     private $fileFile;
 
     /**
-     * @var int
+     * @var \Users
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Users",cascade={"detach"})
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
      */
     private $idUser;
 
@@ -110,14 +111,13 @@ class Articles
     /**
      * @var \Galeries
      *
-     * @ORM\ManyToOne(targetEntity="Galeries",cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="Galeries",cascade={"detach"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_galerie", referencedColumnName="id_galerie")
      * })
      *  @Assert\NotBlank(message="Please choose a gallery")
      */
     private $idGalerie;
-
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
@@ -132,15 +132,20 @@ class Articles
      * )
      */
     private $idPanier = array();
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Favoris",mappedBy="idArticle",cascade={"detach"})
+     */
+    private $idFavoris = array();
 
     /**
      * Constructor
      */
     public function __construct()
-    {
+    { $this->idFavoris = new \Doctrine\Common\Collections\ArrayCollection();
         $this->idPanier = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     public function getIdArticle(): ?int
     {
         return $this->idArticle;
@@ -228,12 +233,12 @@ class Articles
         return $this->fileFile;
     }
 
-    public function getIdUser(): ?int
+    public function getIdUser(): ?Users
     {
         return $this->idUser;
     }
 
-    public function setIdUser(int $idUser): self
+    public function setIdUser(Users $idUser): self
     {
         $this->idUser = $idUser;
 
@@ -287,35 +292,30 @@ class Articles
 
         return $this;
     }
-    public function serialize()
-    {return serialize(array(
-        $this->idArticle,
-        $this->nomArtiste,
-        $this->titreArticle,
-        $this->prixArticle,
-        $this->descArticle,
-        $this->idUser,
-        $this->rate,
-        $this->quantiteArticle,
-        $this->idGalerie,
-       ));
-
-
-    }
-
-    public function unserialize($serialized)
+    /**
+     * @return Collection<int, Favoris>
+     */
+    public function getIdFavoris(): Collection
     {
-        list(
-            $this->idArticle,
-            $this->nomArtiste,
-            $this->titreArticle,
-            $this->prixArticle,
-            $this->descArticle,
-            $this->idUser,
-            $this->rate,
-            $this->quantiteArticle,
-            $this->idGalerie,
-            ) = unserialize($serialized);
+        return $this->idFavoris;
     }
 
+    public function addIdFavori(Favoris $idFavori): self
+    {
+        if (!$this->idFavoris->contains($idFavori)) {
+            $this->idFavoris->add($idFavori);
+            $idFavori->addIdArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdFavori(Favoris $idFavori): self
+    {
+        if ($this->idFavoris->removeElement($idFavori)) {
+            $idFavori->removeIdArticle($this);
+        }
+
+        return $this;
+    }
 }

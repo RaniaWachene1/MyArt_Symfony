@@ -197,6 +197,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
+.my-image {
+  width: 80px;
+  height: 80px;
+}
 
 .container-menu-desktop {
   height: auto;

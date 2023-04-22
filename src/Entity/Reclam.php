@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Reclam
  *
- * @ORM\Table(name="reclam", indexes={@ORM\Index(name="idtyper", columns={"idtyper"}), @ORM\Index(name="id_user", columns={"id_user"})})
+ * @ORM\Table(name="reclam", indexes={@ORM\Index(name="fk_idtyperreclam", columns={"idtyper"}), @ORM\Index(name="fk_userreclam", columns={"id_user"})})
  * @ORM\Entity
  */
 class Reclam
@@ -32,14 +32,14 @@ class Reclam
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=500, nullable=false)
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=500, nullable=false)
+     * @ORM\Column(name="image", type="string", length=255, nullable=false)
      */
     private $image;
 
@@ -51,25 +51,31 @@ class Reclam
     private $dater;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\Column(name="etat", type="string", length=255, nullable=false)
+     */
+    private $etat;
+
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
      */
     private $idUser;
 
     /**
-     * @var int
+     * @var \Typereclamation
      *
-     * @ORM\Column(name="idtyper", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Typereclamation")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idtyper", referencedColumnName="idtr")
+     * })
      */
     private $idtyper;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="etat", type="string", length=50, nullable=false)
-     */
-    private $etat;
 
     public function getIdr(): ?int
     {
@@ -124,30 +130,6 @@ class Reclam
         return $this;
     }
 
-    public function getIdUser(): ?int
-    {
-        return $this->idUser;
-    }
-
-    public function setIdUser(int $idUser): self
-    {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
-    public function getIdtyper(): ?int
-    {
-        return $this->idtyper;
-    }
-
-    public function setIdtyper(int $idtyper): self
-    {
-        $this->idtyper = $idtyper;
-
-        return $this;
-    }
-
     public function getEtat(): ?string
     {
         return $this->etat;
@@ -156,6 +138,30 @@ class Reclam
     public function setEtat(string $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    public function getIdUser(): ?Users
+    {
+        return $this->idUser;
+    }
+
+    public function setIdUser(?Users $idUser): self
+    {
+        $this->idUser = $idUser;
+
+        return $this;
+    }
+
+    public function getIdtyper(): ?Typereclamation
+    {
+        return $this->idtyper;
+    }
+
+    public function setIdtyper(?Typereclamation $idtyper): self
+    {
+        $this->idtyper = $idtyper;
 
         return $this;
     }

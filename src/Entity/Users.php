@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Users
  *
- * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="email", columns={"email"}), @ORM\UniqueConstraint(name="id_user", columns={"id_user"})}, indexes={@ORM\Index(name="id_role", columns={"id_role"})})
+ * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_1483A5E9E7927C74", columns={"email"})})
  * @ORM\Entity
  */
 class Users
@@ -20,7 +20,28 @@ class Users
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idUser;
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=180, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="json", nullable=false)
+     */
+    private $roles;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pwd_user", type="string", length=255, nullable=false)
+     */
+    private $pwdUser;
 
     /**
      * @var string
@@ -37,20 +58,6 @@ class Users
     private $prenomUser;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="pwd_user", type="string", length=255, nullable=false)
-     */
-    private $pwdUser;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="date_naiss", type="date", nullable=true)
-     */
-    private $dateNaiss;
-
-    /**
      * @var int
      *
      * @ORM\Column(name="tel_user", type="integer", nullable=false)
@@ -58,11 +65,18 @@ class Users
     private $telUser;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="sexe", type="string", length=255, nullable=false)
+     * @ORM\Column(name="date_naiss", type="date", nullable=false)
      */
-    private $sexe;
+    private $dateNaiss;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="img", type="string", length=255, nullable=true)
+     */
+    private $img;
 
     /**
      * @var string
@@ -74,37 +88,77 @@ class Users
     /**
      * @var string
      *
-     * @ORM\Column(name="img", type="string", length=255, nullable=false)
+     * @ORM\Column(name="sexe", type="string", length=255, nullable=false)
      */
-    private $img;
+    private $sexe;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @ORM\Column(name="block", type="string", length=255, nullable=false)
      */
-    private $email;
+    private $block;
 
     /**
-     * @var string
+     * @var float|null
      *
-     * @ORM\Column(name="block", type="string", length=30, nullable=false, options={"default"="unBlock"})
+     * @ORM\Column(name="longitude", type="float", precision=10, scale=0, nullable=true)
      */
-    private $block = 'unBlock';
+    private $longitude;
 
     /**
-     * @var \Role
+     * @var float|null
      *
-     * @ORM\ManyToOne(targetEntity="Role")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_role", referencedColumnName="id_role")
-     * })
+     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=true)
      */
-    private $idRole;
+    private $latitude;
 
-    public function getIdUser(): ?int
+    /**
+     * @var \DateTime|null
+     *
+     * @ORM\Column(name="blockedAt", type="date", nullable=true)
+     */
+    private $blockedat;
+
+    public function getId(): ?int
     {
-        return $this->idUser;
+        return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getRoles(): array
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    public function getPwdUser(): ?string
+    {
+        return $this->pwdUser;
+    }
+
+    public function setPwdUser(string $pwdUser): self
+    {
+        $this->pwdUser = $pwdUser;
+
+        return $this;
     }
 
     public function getNomUser(): ?string
@@ -131,30 +185,6 @@ class Users
         return $this;
     }
 
-    public function getPwdUser(): ?string
-    {
-        return $this->pwdUser;
-    }
-
-    public function setPwdUser(string $pwdUser): self
-    {
-        $this->pwdUser = $pwdUser;
-
-        return $this;
-    }
-
-    public function getDateNaiss(): ?\DateTimeInterface
-    {
-        return $this->dateNaiss;
-    }
-
-    public function setDateNaiss(?\DateTimeInterface $dateNaiss): self
-    {
-        $this->dateNaiss = $dateNaiss;
-
-        return $this;
-    }
-
     public function getTelUser(): ?int
     {
         return $this->telUser;
@@ -167,14 +197,26 @@ class Users
         return $this;
     }
 
-    public function getSexe(): ?string
+    public function getDateNaiss(): ?\DateTimeInterface
     {
-        return $this->sexe;
+        return $this->dateNaiss;
     }
 
-    public function setSexe(string $sexe): self
+    public function setDateNaiss(\DateTimeInterface $dateNaiss): self
     {
-        $this->sexe = $sexe;
+        $this->dateNaiss = $dateNaiss;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
@@ -191,26 +233,14 @@ class Users
         return $this;
     }
 
-    public function getImg(): ?string
+    public function getSexe(): ?string
     {
-        return $this->img;
+        return $this->sexe;
     }
 
-    public function setImg(string $img): self
+    public function setSexe(string $sexe): self
     {
-        $this->img = $img;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
+        $this->sexe = $sexe;
 
         return $this;
     }
@@ -227,17 +257,44 @@ class Users
         return $this;
     }
 
-    public function getIdRole(): ?Role
+    public function getLongitude(): ?float
     {
-        return $this->idRole;
+        return $this->longitude;
     }
 
-    public function setIdRole(?Role $idRole): self
+    public function setLongitude(?float $longitude): self
     {
-        $this->idRole = $idRole;
+        $this->longitude = $longitude;
 
         return $this;
     }
 
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
 
+    public function setLatitude(?float $latitude): self
+    {
+        $this->latitude = $latitude;
+
+        return $this;
+    }
+
+    public function getBlockedat(): ?\DateTimeInterface
+    {
+        return $this->blockedat;
+    }
+
+    public function setBlockedat(?\DateTimeInterface $blockedat): self
+    {
+        $this->blockedat = $blockedat;
+
+        return $this;
+    }
+
+    public function __toString(){
+        $var = strval($this->id);
+        return $var;
+    }
 }

@@ -25,8 +25,8 @@ class ArticlesType extends AbstractType
             ->add('descArticle',TextareaType::class,['label'=>false,'attr'=>['placeholder'=>'Description','class'=>'form-control']])
             ->add('quantiteArticle',IntegerType::class,['label'=>false,'attr'=>['placeholder'=>'Quantity','class'=>'form-control']])
             ->add('fileFile', VichFileType::class, [
-                
-                'label' => 'Choose an article ( image or video)',
+                'required' => false,
+                'label' => 'Choose an article (PDF, image or video)',
             ])
             ->add('idGalerie',EntityType::class,['label'=>false,'class'=>Galeries::class,'choice_label'=>'titreGalerie','attr'=>['class'=>'form-control']])
 
