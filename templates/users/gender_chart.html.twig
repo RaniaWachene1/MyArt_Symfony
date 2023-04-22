@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block tableForm %}
+<div style=" justify-content: center; margin-left: 200px;">
+
+    <div class="card">
+        <div  style="display: flex;align-items: center;justify-content: center;margin-top: 20px; padding: 80px;">
+
+            <div class="card-body">
+    <div id="gender_chart"></div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    {{ gc_draw(chart, 'gender_chart') }}
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

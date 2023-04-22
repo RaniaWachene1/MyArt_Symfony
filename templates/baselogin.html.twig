@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}MyArt{% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet"  href="{{asset('assetsRegister/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{{asset('assetsRegister/css/style.css')}}">
+	</head>
+
+	<body>
+{% block login %}
+
+		{% endblock %}
+				    <!-- Flashy depends on jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Load Flashy default JavaScript -->
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    <!-- Include Flashy default partial -->
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

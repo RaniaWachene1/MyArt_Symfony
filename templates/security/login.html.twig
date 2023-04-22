@@ -1,0 +1,45 @@
+{% extends 'baselogin.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block login %}
+		<div class="wrapper" style="background-image: url('{{ asset('assetsRegister/images/9.png') }}');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="{{ asset('assetsRegister/images/van.jpg') }}" alt="">
+				</div>
+				<form method="post">
+                    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+					<h3>Welcome To My Art</h3>
+
+					<div class="form-wrapper">
+						<input type="text" placeholder="Email Address" class="form-control" id="inputEmail" name="email" value="{{ last_username }}" autocomplete="email" required autofocus>
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Password" class="form-control" name="password" id="inputPassword" autocomplete="current-password" required>
+						<i class="zmdi zmdi-lock"></i>
+                        
+    <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+    >
+					</div>
+					
+					<button type="submit">Login
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('app_forgot_password_request') }}" style="color: #bdb127">Forgot Password?Reset</a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ path('app_users_new') }}" style="color: #3a6397">Don't have an account?Register</a>
+				</form>
+			</div>
+		</div>
+		{% endblock %}
