@@ -1,0 +1,6 @@
+<form method="post" action="{{ path('app_reclam_delete', {'idr': reclam.idr}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reclam.idr) }}">
+    <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">Delete</button>
+
+
+</form>

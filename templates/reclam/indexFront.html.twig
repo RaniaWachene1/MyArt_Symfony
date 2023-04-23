@@ -1,0 +1,61 @@
+{% extends 'myclaims.html.twig' %}
+
+{% block title %}Reclam index{% endblock %}
+
+{% block formclaim %}
+
+    <div style=" justify-content: center; margin-left: 150px;">
+
+        <div class="card">
+            <div  style="display: flex;align-items: center;justify-content: center;margin-top: 20px; padding: 50px;">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="card-body">
+                    <center> <h1 class="card-title" >My Claims</h1> </center>
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Image</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for reclam in reclams %}
+                            <tr>
+
+                                <td>{{ reclam.titre }}</td>
+                                <td>{{ reclam.description }}</td>
+                                <td>{{ reclam.idtyper.nom }}</td>
+                                <td><img src="{{vich_uploader_asset(reclam,'imageFile') }}" width="80" height="80"></td>
+                                <td>{{ reclam.dater ? reclam.dater|date('Y-m-d') : '' }}</td>
+                                <td>{{ reclam.etat }}</td>
+                                <td>
+                                    <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" onclick="window.location.href=' {{ path('app_reclam_show2', {'idr': reclam.idr}) }}'">show</button>
+                                    &nbsp;&nbsp;{% if 'Unprocessed' in reclam.etat  %}
+                                    <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" onclick="window.location.href=' {{ path('app_reclam_edit2', {'idr': reclam.idr}) }}'">edit</button>
+                                        {% endif %}
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="9">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" onclick="window.location.href='{{ path('app_reclam_new' ) }}'">Send new claim</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
