@@ -1,0 +1,18 @@
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
+<h4 class="mtext-105 cl2 txt-center p-b-30">
+    Send Us A Claim
+</h4>
+<div class="bor8 m-b-20 how-pos4-parent">
+    {{ form_row(form.titre) }}
+</div>
+<div class="bor8 m-b-30">
+    {{ form_row(form.description) }}
+</div>
+<div class="bor8 m-b-30">
+    {{ form_row(form.imageFile) }}
+</div>
+<div class="bor8 m-b-30">
+    {{ form_row(form.idtyper) }}
+</div>
+<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">{{ button_label|default('Send') }}</button>
+{{ form_end(form) }}

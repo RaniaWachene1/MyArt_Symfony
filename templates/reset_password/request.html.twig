@@ -1,0 +1,38 @@
+{% extends 'baselogin.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+{% block login %}
+<div class="wrapper" style="background-image: url('{{ asset('assetsRegister/images/9.png') }}');">
+    <div class="inner">
+        <div class="image-holder">
+            <img src="{{ asset('assetsRegister/images/van.jpg') }}" alt="">
+        </div>
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+        <h3>Reset your password</h3>
+
+
+
+    {{ form_start(requestForm) }}
+        <div class="form-wrapper">
+        {{ form_row(requestForm.email) }}
+            <i class="zmdi zmdi-email"></i>
+        </div>
+        <div>
+            <small>
+                Enter your email address and we will send you a
+                link to reset your password.
+            </small>
+        </div>
+
+        <button type="submit">
+
+                Send password reset email
+            <i class="zmdi zmdi-arrow-right"></i>
+        </button>
+    {{ form_end(requestForm) }}
+    </div>
+</div>
+
+{% endblock %}

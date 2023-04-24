@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Typereclamation index{% endblock %}
+
+{% block tableForm %}
+<div style=" justify-content: center; margin-left: 150px;">
+
+    <div class="card">
+        <div  style="display: flex;align-items: center;justify-content: center;margin-top: 20px; padding: 50px;">
+
+            <div class="card-body">
+                <center> <h1 class="card-title" >Claim's Type</h1> </center>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Idtr</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typereclamation in typereclamations %}
+            <tr>
+                <td>{{ typereclamation.idtr }}</td>
+                <td>{{ typereclamation.nom }}</td>
+                <td>{{ typereclamation.description }}</td>
+                <td>
+                    <button class="btn btn-primary" onclick="window.location.href='{{ path('app_typereclamation_show', {'idtr': typereclamation.idtr}) }}">show</button>
+                    <button class="btn btn-primary" onclick="window.location.href='{{ path('app_typereclamation_edit', {'idtr': typereclamation.idtr}) }}">edit</button>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+                <div class="text-center">
+
+                    <button class="btn btn-primary" onclick="window.location.href='{{ path('app_typereclamation_new' ) }}'">Create new</button>
+
+                </div>
+
+                <div class="text-center">
+
+                    {{ knp_pagination_render(typereclamations) }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
