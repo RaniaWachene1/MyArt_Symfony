@@ -2,27 +2,36 @@
 
 namespace App\Entity;
 
-use App\Repository\GaleriesRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: GaleriesRepository::class)]
+/**
+ * Galeries
+ *
+ * @ORM\Table(name="galeries")
+ * @ORM\Entity
+ */
 class Galeries
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $idGalerie = null;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id_galerie", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idGalerie;
 
-    #[ORM\Column(length: 255)]
-    private ?string $titreGalerie = null;
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre_galerie", type="string", length=255, nullable=false)
+     */
+    private $titreGalerie;
 
     public function getIdGalerie(): ?int
     {
         return $this->idGalerie;
     }
-
-
 
     public function getTitreGalerie(): ?string
     {
@@ -35,4 +44,6 @@ class Galeries
 
         return $this;
     }
+
+
 }

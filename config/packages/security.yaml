@@ -14,14 +14,18 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            lazy: true
             provider: app_user_provider
             custom_authenticator: App\Security\UsersAuthenticator
+            entry_point: App\Security\UsersAuthenticator
             logout:
                 path: app_logout
                 target: app_login
                 # where to redirect after logout
                 # target: app_any_route
+            form_login:
+                login_path: app_login
+                check_path: app_login
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -35,6 +39,7 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/client, roles: ROLE_CLIENT }
         - { path: ^/artist, roles: ROLE_ARTIST}
+
     encoders:
         App\Entity\Users:
             algorithm: auto

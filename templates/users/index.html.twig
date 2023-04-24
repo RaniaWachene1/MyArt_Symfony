@@ -16,9 +16,6 @@
              
                 <th>NomUser</th>
                 <th>PrenomUser</th>
-                
-            
-               
                 <th>Img</th>
                 <th>Role</th>
                 <th>Block</th>
@@ -44,7 +41,12 @@
                         {% else %}
                         <td>Admin</td>
                 {% endif %}
-                <td>{{ user.block }}</td>
+                <td>
+                    {% if user.block=="unBlocked" %}
+                        <a href="{{ path('app_users_block',{'id':user.id}) }}"><img src="{{ asset('images/lock.png') }}" width="30" height="30"></a>
+                        {% else %}
+                            <a href="{{ path('app_users_unblock',{'id':user.id}) }}"><img src="{{ asset('images/unlocked.png') }}" width="30" height="30"></a>
+                            {% endif %}
                 <td>
                 <button class="btn btn-primary" onclick="window.location.href='{{ path('app_users_show', {'id': user.id}) }}'">show</button>
                    &nbsp;&nbsp;

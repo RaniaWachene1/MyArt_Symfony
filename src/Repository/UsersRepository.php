@@ -35,6 +35,15 @@ class UsersRepository extends ServiceEntityRepository implements PasswordUpgrade
             ->getQuery()
             ->getSingleScalarResult();
     }
+    public function countByRole(string $role): int
+    {
+        return $this->createQueryBuilder('u')
+            ->select('COUNT(u.id)')
+            ->andWhere('u.roles = :role')
+            ->setParameter('role', $role)
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
     public function save(Users $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);

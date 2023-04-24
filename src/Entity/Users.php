@@ -7,29 +7,45 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
-#[ORM\Entity(repositoryClass: UsersRepository::class)]
+
+/**
+ * @ORM\Entity(repositoryClass=UsersRepository::class)
+ * @ORM\Table(name="users")
+ */
 #[Vich\Uploadable]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serializable
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(name:"id_user")]
-    private ?int $id = null;
-
-    #[ORM\Column(length: 180, unique: true)]
     /**
+     * @var int
+     *@ORM\Column(name="id_user",type="integer")
+     *@ORM\Id
+     *@ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+    /**
+     * @ORM\Column(length=180, unique=true)
      * @Assert\NotBlank(message="Please enter your email")
      * @Assert\Email (message="Invalid mail!")
      */
 
     private ?string $email = null;
-
-    #[ORM\Column]
+    /**
+     * @ORM\Column(type="boolean",nullable=true,name="isVerified")
+     *
+     */
+    private $isVerified = false;
+    /**
+     * @ORM\Column
+     */
     private array $roles = [];
     private string $role;
     /**
@@ -39,12 +55,13 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serial
      *     message="The password should contain at least one uppercase letter, numbers, lowercase letters, and special characters, and be longer than 8 characters"
      * )
      *  @Assert\NotBlank(message="Please enter a password")
+     * @ORM\Column(name="pwd_user")
      */
-    #[ORM\Column(name:"pwd_user")]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255,name:"nom_user")]
+
     /**
+     * @ORM\Column(length=255,name="nom_user")
      * @Assert\Regex(
      *     pattern="/^[a-zA-Z]+$/",
      *     message="Last should contain only alphabetical letters"
@@ -53,8 +70,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serial
      */
     private ?string $nomUser = null;
 
-    #[ORM\Column(length: 255,name:"prenom_user")]
+
     /**
+     * @ORM\Column(length=255,name="prenom_user")
      * @Assert\Regex(
      *     pattern="/^[a-zA-Z]+$/",
      *     message="Firstname should contain only alphabetical letters"
@@ -63,8 +81,9 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serial
      */
     private ?string $prenomUser = null;
 
-    #[ORM\Column(name:"tel_user")]
+
     /**
+     * @ORM\Column(name="tel_user")
      * @Assert\Regex(
      *     pattern="/^\d{8}$/",
      *     message="The phone number should be exactly 8 digits"
@@ -74,64 +93,57 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serial
      */
     private ?int $telUser = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE,name:"date_naiss")]
+
     /**
+     * @ORM\Column(type=Types::DATE_MUTABLE,name="date_naiss")
      * @Assert\LessThanOrEqual("-18 years", message="You must be at least 18 years old.")
      * @Assert\NotBlank(message="Please enter your birth date")
      */
     private ?\DateTimeInterface $dateNaiss = null;
 
-    #[ORM\Column(length: 255,nullable:true)]
+    /**
+     * @ORM\Column(length=255,nullable=true)
+     */
     private ?string $img = null;
     #[Vich\UploadableField(mapping: 'images' , fileNameProperty:"img")]
 
     private $imageFile;
-    #[ORM\Column(length: 255)]
     /**
+     * @ORM\Column(length=255)
      * @Assert\NotBlank(message="Please enter your adress")
      *
      */
     private ?string $adresse = null;
-    #[ORM\Column(nullable: true)]
+    /**
+     * @ORM\Column(nullable=true)
+     */
     private ?float $latitude = null;
-
-    #[ORM\Column(nullable: true)]
+    /**
+     * @ORM\Column(nullable=true)
+     */
     private ?float $longitude = null;
 
-    #[ORM\Column(length: 255)]
+
     /**
+     * @ORM\Column(length=255)
      * @Assert\NotBlank(message="Please choose your sexe")
      *
      */
     private ?string $sexe = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $block = 'unBlock';
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(length=255)
      */
-    private $blockedAt;
+    private ?string $block = 'unBlocked';
 
-    public function isBlocked(): bool
-    {
-        return $this->blockedAt && $this->blockedAt > new \DateTimeImmutable('-2 hours');
-    }
 
-    public function setBlocked(bool $blocked): void
-    {
-        if ($blocked) {
-            $this->blockedAt = new \DateTimeImmutable();
-        } else {
-            $this->blockedAt = null;
-        }
-    }
 
     public function __construct()
     {
         $this->articles = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
@@ -147,7 +159,17 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serial
 
         return $this;
     }
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
 
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
     /**
      * A visual identifier that represents this user.
      *

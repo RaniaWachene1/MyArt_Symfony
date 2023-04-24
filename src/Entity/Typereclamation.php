@@ -2,22 +2,38 @@
 
 namespace App\Entity;
 
-use App\Repository\TypereclamationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TypereclamationRepository::class)]
+/**
+ * Typereclamation
+ *
+ * @ORM\Table(name="typereclamation")
+ * @ORM\Entity
+ */
 class Typereclamation
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $idtr = null;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="idtr", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtr;
 
-    #[ORM\Column(length: 255)]
-    private ?string $nom = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255, nullable=false)
+     */
+    private $nom;
 
-    #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
+     */
+    private $description;
 
     public function getIdtr(): ?int
     {
@@ -51,4 +67,6 @@ class Typereclamation
         $var = strval($this->idtr);
         return $var;
     }
+
+
 }

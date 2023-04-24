@@ -2,29 +2,49 @@
 
 namespace App\Entity;
 
-use App\Repository\ReponseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ReponseRepository::class)]
+/**
+ * Reponse
+ *
+ * @ORM\Table(name="reponse", indexes={@ORM\Index(name="fk_reclam_reponse", columns={"idrec"})})
+ * @ORM\Entity
+ */
 class Reponse
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $description = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $objet = null;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
+     */
+
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="objet", type="string", length=255, nullable=false)
+     */
+    private $objet;
+
+    /**
+     * @var \Reclam
      *
      * @ORM\ManyToOne(targetEntity="Reclam")
+     * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="idrec", referencedColumnName="idr")
+     * })
      */
-    private ?Reclam $idrec = null;
+    private $idrec;
 
     public function getId(): ?int
     {
@@ -66,4 +86,6 @@ class Reponse
 
         return $this;
     }
+
+
 }

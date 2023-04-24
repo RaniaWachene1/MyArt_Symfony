@@ -7,18 +7,23 @@ use Doctrine\ORM\Mapping as ORM;
 use SymfonyCasts\Bundle\ResetPassword\Model\ResetPasswordRequestInterface;
 use SymfonyCasts\Bundle\ResetPassword\Model\ResetPasswordRequestTrait;
 
-#[ORM\Entity(repositoryClass: ResetPasswordRequestRepository::class)]
+/**
+ * @ORM\Entity(repositoryClass=ResetPasswordRequestRepository::class)
+ */
 class ResetPasswordRequest implements ResetPasswordRequestInterface
 {
     use ResetPasswordRequestTrait;
 
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
+    /**
+     * @ORM\Column
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
     private ?int $id = null;
-
-    #[ORM\ManyToOne]
-    #[ORM\JoinColumn(nullable: false,name:"user_id", referencedColumnName:"id_user")]
+/**
+ * @ORM\ManyToOne(targetEntity=Users::class)
+ * @ORM\JoinColumn(nullable=false,name="user_id", referencedColumnName="id_user")
+ */
     private ?Users $user = null;
 
     public function __construct(object $user, \DateTimeInterface $expiresAt, string $selector, string $hashedToken)

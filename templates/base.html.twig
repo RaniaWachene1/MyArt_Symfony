@@ -296,43 +296,48 @@
       </li><!-- End Dashboard Nav -->
 
       <!-- End Components Nav -->
-<li class="nav-item">
-        <a class="nav-link collapsed " href="{{path('app_users_index')}}">
-          <i class="bi bi-grid"></i>
+      <li class="nav-item">
+        <a class="nav-link collapsed " href="{{ path('app_users_index') }}">
+          <i class="bi bi-person"></i>
           <span>Users</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed " href="index.html">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link collapsed " href="{{path('app_galeries_index')}}">
+          <i class="bi bi-easel"></i>
           <span>Gallery</span>
         </a>
       </li>
-<li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
-          <i class="bi bi-grid"></i>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{path('app_articles_indexadmin')}}">
+          <i class="bi bi-easel3"></i>
           <span>Article</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed " href="index.html">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-calendar-event"></i>
           <span>Events</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed " href="index.html">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-hammer"></i>
           <span>Auctions</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed " href="index.html">
-          <i class="bi bi-grid"></i>
+        <a class="nav-link collapsed " href="{{ path('app_reclam_index') }}">
+          <i class="bi bi-clipboard2-check"></i>
           <span>Claims</span>
         </a>
       </li>
-    
+      <li class="nav-item">
+        <a class="nav-link collapsed " href="{{ path('app_typereclamation_index') }}">
+          <i class="bi bi-clipboard2"></i>
+          <span>Claims Type</span>
+        </a>
+      </li>
       
     
    
@@ -359,23 +364,25 @@
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
+      {% block stats %}
+        <section class="section dashboard">
           <div class="row">
-         {% block tableForm %}{% endblock %}
-          
 
-         
+            <!-- Left side columns -->
+            <div class="col-lg-8">
+              <div class="row">
+                {% block tableForm %}{% endblock %}
+
+
+
+
+              </div>
+            </div><!-- End Left side columns -->
+
 
           </div>
-        </div><!-- End Left side columns -->
-
-      
-      </div>
-    </section>
+        </section>
+      {% endblock %}
 
   </main><!-- End #main -->
 

@@ -48,20 +48,28 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						{% if app.user %}
+						{{ app.user.prenomUser }} {{ app.user.nomUser }}
+						{% endif %}
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
-						<a href="{{path('app_users_edit',{'id':app.user.id})}}" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
-						<a href="{{path('app_logout')}}" class="flex-c-m p-lr-10 trans-04">
-							Logout
-						</a>
 
+						{% if app.user %}
+							<a href="{{ path('app_users_edit',{'id':app.user.id}) }}" class="flex-c-m p-lr-10 trans-04">
+								My Account
+							</a>
+							<a href="{{ path('app_reclam_index2') }}" class="flex-c-m trans-04 p-lr-25">
+								My Claims
+							</a>
+							<a href="{{ path('app_logout') }}" class="flex-c-m p-lr-10 trans-04">
+								Logout
+							</a>
+						{% else %}
+							<a href="{{ path('app_login') }}" class="flex-c-m p-lr-10 trans-04">
+								Login
+							</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -95,7 +103,7 @@
 							</li>
 
 							<li>
-								<a href="about.html">Claim</a>
+								<a href="{{ path('app_reclam_new') }}">Claim</a>
 							</li>
 
 							
@@ -156,27 +164,29 @@
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						{% if app.user %}
+							{{ app.user.nomUser }} {{ app.user.nomUser }}
+						{% endif %}
 					</div>
 				</li>
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
+						{% if app.user %}
+							<a href="{{ path('app_users_edit',{'id':app.user.id}) }}" class="flex-c-m p-lr-10 trans-04">
+								My Account
+							</a>
+							<a href="{{ path('app_reclam_index2') }}" class="flex-c-m trans-04 p-lr-25">
+								My Claims
+							</a>
+							<a href="{{ path('app_logout') }}" class="flex-c-m p-lr-10 trans-04">
+								Logout
+							</a>
+						{% else %}
+							<a href="{{ path('app_login') }}" class="flex-c-m p-lr-10 trans-04">
+								Login
+							</a>
+						{% endif %}
 					</div>
 				</li>
 			</ul>

@@ -8,14 +8,19 @@ use App\Form\UsersTypeEdit;
 use App\Form\UsersTypeEditadmin;
 use App\Repository\UsersRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use MercurySeries\FlashyBundle\FlashyNotifier;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+
 #[Route('/users')]
 class UsersController extends AbstractController
 {
@@ -120,7 +125,7 @@ class UsersController extends AbstractController
             'form' => $form,
         ]);
     }
-
+    //register
     #[Route('/new', name: 'app_users_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordencoder, FlashyNotifier $flashy): Response
     {
@@ -181,6 +186,7 @@ class UsersController extends AbstractController
             } else {
                 $entityManager->persist($user);
                 $entityManager->flush();
+
                 $flashy->success('Account created');
                 return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
             }
@@ -364,7 +370,8 @@ class UsersController extends AbstractController
     }
 
 
-     #[Route('/gender/stats',name:'app_users_stats')]
+
+    #[Route('/gender/stats',name:'app_users_stats')]
     public function usersBySexeChartAction(EntityManagerInterface $entityManager): Response
     {
         $userRepository=$entityManager->getRepository(Users::class);
@@ -384,11 +391,36 @@ class UsersController extends AbstractController
         $pieChart->getData()->setArrayToDataTable($chartData);
 
         // Set the chart options
-        $pieChart->getOptions()->setTitle('User Gender Distribution');
+        //$pieChart->getOptions()->setTitle('User Gender Distribution');
+        $pieChart->getOptions()->setPieHole(0.4);
+        $pieChart->getOptions()->setWidth(500);
+        $pieChart->getOptions()->setHeight(400);
+////////////////////////////////////////////////////////////////////:statsByRole
+        // Get the user counts by role from the repository
+        $artistCount = $userRepository->countByRole('["ROLE_ARTIST"]');
+        $clientCount = $userRepository->countByRole('["ROLE_CLIENT"]');
+
+        // Create the chart data
+        $chartData2 = [
+            ['Role', 'Count'],
+            ['Artist', $artistCount],
+            ['Client', $clientCount],
+        ];
+
+        // Create the chart object and set the data
+        $pieChart2 = new PieChart();
+        $pieChart2->getData()->setArrayToDataTable($chartData2);
+        $pieChart2->getOptions()->setWidth(500);
+        $pieChart2->getOptions()->setHeight(400);
+        // Set the chart options
+        // $pieChart2->getOptions()->setTitle('User Role Distribution');
+
+
 
         // Render the view with the chart
         return $this->render('users/gender_chart.html.twig', [
             'chart' => $pieChart,
+            'chart2'=>$pieChart2,
         ]);
     }
 
@@ -402,6 +434,22 @@ class UsersController extends AbstractController
         }
 
         return $this->redirectToRoute('app_users_index', [], Response::HTTP_SEE_OTHER);
+    }
+    #[Route('/{id}/block', name: 'app_users_block', methods: ['POST','GET'])]
+    public function block(Request $request,Users $user,EntityManagerInterface $entityManager,FlashyNotifier $flashyNotifier):Response
+    {
+        $user->setBlock('Blocked');
+        $entityManager->flush();
+        $flashyNotifier->success('User Blocked');
+        return $this->redirectToRoute('app_users_index',[],Response::HTTP_SEE_OTHER);
+    }
+    #[Route('/{id}/unblock', name: 'app_users_unblock', methods: ['POST','GET'])]
+    public function unblock(Request $request,Users $user,EntityManagerInterface $entityManager,FlashyNotifier $flashyNotifier):Response
+    {
+        $user->setBlock('unBlocked');
+        $entityManager->flush();
+        $flashyNotifier->success('User unBlocked');
+        return $this->redirectToRoute('app_users_index',[],Response::HTTP_SEE_OTHER);
     }
 
 
