@@ -55,7 +55,10 @@ class __TwigTemplate_29e3498649c8cc64c6d0de8327e02df7 extends Template
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets1/vendor/bootstrap/css/bootstrap.min.css"), "html", null, true);
         echo "\">
-
+<link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/mercuryseriesflashy/css/flashy.css"), "html", null, true);
+        echo "\">
 
 <link rel=\"icon\" type=\"image/png\" href=\"";
         // line 11
@@ -150,10 +153,7 @@ class __TwigTemplate_29e3498649c8cc64c6d0de8327e02df7 extends Template
 \t\t\t\t\t\t\tHelp & FAQs
 \t\t\t\t\t\t</a>
 
-\t\t\t\t\t\t<a href=\"";
-        // line 59
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_users_edit", ["idUser" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59), "idUser", [], "any", false, false, false, 59)]), "html", null, true);
-        echo "\" class=\"flex-c-m trans-04 p-lr-25\">
+\t\t\t\t\t\t<a href=\"#\" class=\"flex-c-m trans-04 p-lr-25\">
 \t\t\t\t\t\t\tMy Account
 \t\t\t\t\t\t</a>
 
@@ -188,7 +188,10 @@ class __TwigTemplate_29e3498649c8cc64c6d0de8327e02df7 extends Template
 \t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"#\">Gallery</a>
+\t\t\t\t\t\t\t\t<a href=\"";
+        // line 91
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_articles_indexfront");
+        echo "\">Gallery</a>
 \t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t<li >
@@ -536,7 +539,10 @@ class __TwigTemplate_29e3498649c8cc64c6d0de8327e02df7 extends Template
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets1/images/gal2.png"), "html", null, true);
         echo "\" alt=\"IMG-BANNER\">
 
-\t\t\t\t\t\t<a href=\"{}\" class=\"block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3\">
+\t\t\t\t\t\t<a href=\"";
+        // line 421
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_articles_indexfront");
+        echo "\" class=\"block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3\">
 \t\t\t\t\t\t\t<div class=\"block1-txt-child1 flex-col-l\" color=\"white\">
 \t\t\t\t\t\t\t\t<span class=\"block1-name ltext-102 trans-04 p-b-8\" color=\"white\">
 \t\t\t\t\t\t\t\t\tGallery
@@ -1417,6 +1423,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         // line 1205
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets1/js/main.js"), "html", null, true);
         echo "\"></script>
+\t   <!-- Flashy depends on jQuery -->
+    <script src=\"//code.jquery.com/jquery.js\"></script>
+    <!-- Load Flashy default JavaScript -->
+    <script src=\"";
+        // line 1209
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/mercuryseriesflashy/js/flashy.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Include Flashy default partial -->
+    ";
+        // line 1211
+        echo twig_include($this->env, $context, "@MercurySeriesFlashy/flashy.html.twig");
+        echo "
 
 </body>
 </html>";
@@ -1459,7 +1477,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     public function getDebugInfo()
     {
-        return array (  1432 => 4,  1418 => 1205,  1398 => 1188,  1357 => 1150,  1352 => 1148,  1335 => 1134,  1327 => 1129,  1322 => 1127,  1318 => 1126,  1313 => 1124,  1309 => 1123,  1296 => 1113,  1291 => 1111,  1287 => 1110,  1282 => 1108,  1277 => 1106,  1161 => 993,  1156 => 991,  1143 => 981,  1138 => 979,  1127 => 971,  1122 => 969,  1108 => 958,  1076 => 929,  1069 => 925,  1062 => 921,  1055 => 917,  1048 => 913,  904 => 772,  900 => 771,  877 => 751,  592 => 469,  564 => 444,  536 => 419,  406 => 292,  387 => 276,  368 => 260,  333 => 228,  234 => 132,  178 => 79,  155 => 59,  131 => 38,  127 => 37,  122 => 35,  117 => 33,  112 => 31,  107 => 29,  102 => 27,  97 => 25,  92 => 23,  87 => 21,  82 => 19,  77 => 17,  72 => 15,  67 => 13,  62 => 11,  56 => 8,  49 => 4,  44 => 1,);
+        return array (  1450 => 4,  1436 => 1211,  1431 => 1209,  1424 => 1205,  1404 => 1188,  1363 => 1150,  1358 => 1148,  1341 => 1134,  1333 => 1129,  1328 => 1127,  1324 => 1126,  1319 => 1124,  1315 => 1123,  1302 => 1113,  1297 => 1111,  1293 => 1110,  1288 => 1108,  1283 => 1106,  1167 => 993,  1162 => 991,  1149 => 981,  1144 => 979,  1133 => 971,  1128 => 969,  1114 => 958,  1082 => 929,  1075 => 925,  1068 => 921,  1061 => 917,  1054 => 913,  910 => 772,  906 => 771,  883 => 751,  598 => 469,  570 => 444,  544 => 421,  539 => 419,  409 => 292,  390 => 276,  371 => 260,  336 => 228,  237 => 132,  193 => 91,  178 => 79,  134 => 38,  130 => 37,  125 => 35,  120 => 33,  115 => 31,  110 => 29,  105 => 27,  100 => 25,  95 => 23,  90 => 21,  85 => 19,  80 => 17,  75 => 15,  70 => 13,  65 => 11,  60 => 9,  56 => 8,  49 => 4,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -1472,7 +1490,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 <!--===============================================================================================-->\t
 \t<link rel=\"stylesheet\" type=\"text/css\" href=\"{{asset('assets1/vendor/bootstrap/css/bootstrap.min.css')}}\">
-
+<link rel=\"stylesheet\" href=\"{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}\">
 
 <link rel=\"icon\" type=\"image/png\" href=\"{{asset('assets1/images/icons/Alogo.png')}}\"/>
 <!--===============================================================================================-->
@@ -1522,7 +1540,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t\t\t\t\t\t\tHelp & FAQs
 \t\t\t\t\t\t</a>
 
-\t\t\t\t\t\t<a href=\"{{path('app_users_edit',{'idUser':app.user.idUser})}}\" class=\"flex-c-m trans-04 p-lr-25\">
+\t\t\t\t\t\t<a href=\"#\" class=\"flex-c-m trans-04 p-lr-25\">
 \t\t\t\t\t\t\tMy Account
 \t\t\t\t\t\t</a>
 
@@ -1554,7 +1572,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t<a href=\"#\">Gallery</a>
+\t\t\t\t\t\t\t\t<a href=\"{{path('app_articles_indexfront')}}\">Gallery</a>
 \t\t\t\t\t\t\t</li>
 
 \t\t\t\t\t\t\t<li >
@@ -1884,7 +1902,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t\t\t\t\t<div class=\"block1 wrap-pic-w\">
 \t\t\t\t\t\t<img src=\"{{asset('assets1/images/gal2.png')}}\" alt=\"IMG-BANNER\">
 
-\t\t\t\t\t\t<a href=\"{}\" class=\"block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3\">
+\t\t\t\t\t\t<a href=\"{{path('app_articles_indexfront')}}\" class=\"block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3\">
 \t\t\t\t\t\t\t<div class=\"block1-txt-child1 flex-col-l\" color=\"white\">
 \t\t\t\t\t\t\t\t<span class=\"block1-name ltext-102 trans-04 p-b-8\" color=\"white\">
 \t\t\t\t\t\t\t\t\tGallery
@@ -2669,8 +2687,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 \t</script>
 <!--===============================================================================================-->
 \t<script src=\"{{asset('assets1/js/main.js')}}\"></script>
+\t   <!-- Flashy depends on jQuery -->
+    <script src=\"//code.jquery.com/jquery.js\"></script>
+    <!-- Load Flashy default JavaScript -->
+    <script src=\"{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}\"></script>
+    <!-- Include Flashy default partial -->
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
 
 </body>
-</html>", "front.html.twig", "C:\\Users\\Acer\\Downloads\\my_project_directory\\my_project_directory\\templates\\front.html.twig");
+</html>", "front.html.twig", "C:\\Users\\rania\\my_project_directory\\templates\\front.html.twig");
     }
 }

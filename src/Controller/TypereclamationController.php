@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Typereclamation;
 use App\Form\TypereclamationType;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,11 +15,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class TypereclamationController extends AbstractController
 {
     #[Route('/', name: 'app_typereclamation_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
-    {
-        $typereclamations = $entityManager
-            ->getRepository(Typereclamation::class)
-            ->findAll();
+    public function index(EntityManagerInterface $entityManager,PaginatorInterface $paginator,Request $request): Response
+    {     $donnees =$entityManager
+        ->getRepository(Typereclamation::class)
+        ->findAll();
+        $typereclamations = $paginator->paginate(
+            $donnees,// Requête contenant les données à paginer (ici les articles)
+            $request->query->getInt('page',1),// Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            2  // Nombre de résultats par page
+        );
 
         return $this->render('typereclamation/index.html.twig', [
             'typereclamations' => $typereclamations,

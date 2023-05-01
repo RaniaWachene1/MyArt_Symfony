@@ -33,7 +33,22 @@ class ReponseController extends AbstractController
             'form' => $form,
         ]);
     }
+    #[Route('/{idr}/edit/{id}', name: 'app_reponse_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, EntityManagerInterface $entityManager,Reclam $reclam,Reponse $reponse): Response
+    {
+        $form = $this->createForm(ReponseType::class, $reponse);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($reponse);
+            $entityManager->flush();
+            return $this->redirectToRoute('app_reclam_show', ['idr'=>$reclam->getIdr()], Response::HTTP_SEE_OTHER);
+        }
 
+        return $this->renderForm('reponse/edit.html.twig', [
+            'reponse' => $reponse,
+            'form' => $form,
+        ]);
+    }
 
 
 }

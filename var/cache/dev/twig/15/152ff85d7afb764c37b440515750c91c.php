@@ -43,7 +43,7 @@ class __TwigTemplate_1f0628c10e86570d0d0a187d319197f2 extends Template
         echo "/*
  * Copyright (c) 2017 ZURB, inc. -- MIT License
  *
- * https://raw.githubusercontent.com/foundation/foundation-emails/v2.2.1/dist/foundation-emails.css
+ * https://github.com/foundation/foundation-emails/blob/v2.2.1/dist/foundation-emails.css
  */
 
 .wrapper {
@@ -1731,7 +1731,7 @@ body.outlook p {
         return new Source("/*
  * Copyright (c) 2017 ZURB, inc. -- MIT License
  *
- * https://raw.githubusercontent.com/foundation/foundation-emails/v2.2.1/dist/foundation-emails.css
+ * https://github.com/foundation/foundation-emails/blob/v2.2.1/dist/foundation-emails.css
  */
 
 .wrapper {
@@ -3395,6 +3395,6 @@ body.outlook p {
         min-width: 0;
     }
 }
-", "@email/zurb_2/main.css", "C:\\Users\\Acer\\Downloads\\my_project_directory\\my_project_directory\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\zurb_2\\main.css");
+", "@email/zurb_2/main.css", "C:\\Users\\rania\\my_project_directory\\vendor\\symfony\\twig-bridge\\Resources\\views\\Email\\zurb_2\\main.css");
     }
 }

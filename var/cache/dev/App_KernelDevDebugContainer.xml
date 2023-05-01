@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">C:\Users\Acer\Downloads\Pidevsymfonyy</parameter>
+    <parameter key="kernel.project_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">C:\Users\Acer\Downloads\Pidevsymfonyy\var\log</parameter>
+    <parameter key="kernel.build_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
@@ -25,71 +25,81 @@
       <parameter key="MercurySeriesFlashyBundle">MercurySeries\FlashyBundle\MercurySeriesFlashyBundle</parameter>
       <parameter key="CMENGoogleChartsBundle">CMEN\GoogleChartsBundle\CMENGoogleChartsBundle</parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle">SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle</parameter>
+      <parameter key="StofDoctrineExtensionsBundle">Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\debug-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\debug-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\web-profiler-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\web-profiler-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="TwigExtraBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\twig\extra-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\twig\extra-bundle</parameter>
         <parameter key="namespace">Twig\Extra\TwigExtraBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\monolog-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\monolog-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\sensio\framework-extra-bundle\src</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\sensio\framework-extra-bundle\src</parameter>
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
       <parameter key="SymfonyCastsResetPasswordBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\ResetPassword</parameter>
       </parameter>
       <parameter key="VichUploaderBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle</parameter>
         <parameter key="namespace">Vich\UploaderBundle</parameter>
       </parameter>
       <parameter key="MercurySeriesFlashyBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\mercuryseries\flashy-bundle\src</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\mercuryseries\flashy-bundle\src</parameter>
         <parameter key="namespace">MercurySeries\FlashyBundle</parameter>
       </parameter>
       <parameter key="CMENGoogleChartsBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\cmen\google-charts-bundle</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\cmen\google-charts-bundle</parameter>
         <parameter key="namespace">CMEN\GoogleChartsBundle</parameter>
       </parameter>
       <parameter key="SymfonyCastsVerifyEmailBundle" type="collection">
-        <parameter key="path">C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src</parameter>
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src</parameter>
         <parameter key="namespace">SymfonyCasts\Bundle\VerifyEmail</parameter>
+      </parameter>
+      <parameter key="StofDoctrineExtensionsBundle" type="collection">
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\stof\doctrine-extensions-bundle\src</parameter>
+        <parameter key="namespace">Stof\DoctrineExtensionsBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -129,17 +139,17 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
-    <parameter key="translator.default_path">C:\Users\Acer\Downloads\Pidevsymfonyy/translations</parameter>
+    <parameter key="translator.default_path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/serialization.php</parameter>
-    <parameter key="cache.prefix.seed">_C:\Users\Acer\Downloads\Pidevsymfonyy.App_KernelDevDebugContainer</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/serialization.php</parameter>
+    <parameter key="cache.prefix.seed">_C:\Users\Acer\Desktop\MyArt_Symfony-Gallery.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -152,11 +162,11 @@
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
-    <parameter key="validator.mapping.cache.file">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/profiler</parameter>
     <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
     <parameter key="doctrine.data_collector.class">Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
     <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
@@ -221,7 +231,7 @@
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.enable_lazy_ghost_objects">false</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -230,7 +240,7 @@
       <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\Users\Acer\Downloads\Pidevsymfonyy/templates</parameter>
+    <parameter key="twig.default_path">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
@@ -265,7 +275,7 @@
     <parameter key="vich_uploader.mappings" type="collection">
       <parameter key="images" type="collection">
         <parameter key="uri_prefix">/images</parameter>
-        <parameter key="upload_destination">C:\Users\Acer\Downloads\Pidevsymfonyy/public/images</parameter>
+        <parameter key="upload_destination">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/public/images</parameter>
         <parameter key="namer" type="collection">
           <parameter key="service">Vich\UploaderBundle\Naming\UniqidNamer.images</parameter>
           <parameter key="options" type="collection"/>
@@ -283,6 +293,25 @@
     <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
     <parameter key="cmen_google_charts.version">current</parameter>
     <parameter key="cmen_google_charts.language"></parameter>
+    <parameter key="stof_doctrine_extensions.default_locale">en</parameter>
+    <parameter key="stof_doctrine_extensions.translation_fallback">false</parameter>
+    <parameter key="stof_doctrine_extensions.persist_default_translation">false</parameter>
+    <parameter key="stof_doctrine_extensions.skip_translation_on_load">false</parameter>
+    <parameter key="stof_doctrine_extensions.listener.translatable.class">Gedmo\Translatable\TranslatableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.timestampable.class">Gedmo\Timestampable\TimestampableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.blameable.class">Gedmo\Blameable\BlameableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.sluggable.class">Gedmo\Sluggable\SluggableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.tree.class">Gedmo\Tree\TreeListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.loggable.class">Gedmo\Loggable\LoggableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.sortable.class">Gedmo\Sortable\SortableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.softdeleteable.class">Gedmo\SoftDeleteable\SoftDeleteableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.uploadable.class">Gedmo\Uploadable\UploadableListener</parameter>
+    <parameter key="stof_doctrine_extensions.listener.reference_integrity.class">Gedmo\ReferenceIntegrity\ReferenceIntegrityListener</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -381,6 +410,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\ArticleController" class="App\Controller\ArticleController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\ArticleController"/>
+      </call>
+    </service>
     <service id="App\Controller\ArticlesController" class="App\Controller\ArticlesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -400,6 +436,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\GaleriesController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PanierController" class="App\Controller\PanierController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\PanierController"/>
       </call>
     </service>
     <service id="App\Controller\RatingController" class="App\Controller\RatingController" public="true" autowire="true" autoconfigure="true">
@@ -447,6 +490,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\StatsController" class="App\Controller\StatsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\StatsController"/>
+      </call>
+    </service>
     <service id="App\Controller\TestController" class="App\Controller\TestController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -480,7 +530,14 @@
     <service id="App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\DeleteFormType" class="App\Form\DeleteFormType" autowire="true" autoconfigure="true"/>
+    <service id="App\Form\DeleteType" class="App\Form\DeleteType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\GaleriesType" class="App\Form\GaleriesType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PanierType" class="App\Form\PanierType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\RatingType" class="App\Form\RatingType" autowire="true" autoconfigure="true">
@@ -518,6 +575,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\GaleriesRepository" class="App\Repository\GaleriesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\PanierRepository" class="App\Repository\PanierRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -628,7 +689,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/http_cache</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -638,7 +699,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -838,7 +899,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -871,7 +932,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -1040,7 +1101,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1215,16 +1276,16 @@
       <argument type="service" id="translator.data_collector"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/translations</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/templates</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/translations</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</argument>
       <argument type="collection">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1241,16 +1302,16 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/translations</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/templates</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/translations</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</argument>
       <argument type="collection">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </argument>
       <argument type="collection"/>
       <call method="setName">
@@ -1341,7 +1402,9 @@
         <argument>App\Form\ArticlesType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\CommentaireType</argument>
+        <argument>App\Form\DeleteType</argument>
         <argument>App\Form\GaleriesType</argument>
+        <argument>App\Form\PanierType</argument>
         <argument>App\Form\RatingType</argument>
         <argument>App\Form\ReclamType</argument>
         <argument>App\Form\ReclamType2</argument>
@@ -1498,7 +1561,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1528,7 +1591,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/app</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
@@ -1813,396 +1876,433 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.af.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.ar.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.ar.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ar.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.ar.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ar.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.az.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="be" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.be.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.bg.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.bg.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.bg.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.bs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.ca.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.ca.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ca.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.ca.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ca.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ca.xliff</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.cs.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.cs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.cs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.cs.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.cs.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.da.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.de.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.de.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.de.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.de.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.de.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.el.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.en.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.en.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.en.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.en.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.en.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.es.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.es.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.es.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.es.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.es.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.et.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.eu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.fa.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.fi.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.fi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.fi.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.fr.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.fr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.fr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.fr.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.fr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.gl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.he.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.hr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.hu.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.hu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.hu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.hu.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.hu.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.hy.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.id.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.id.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.it.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.it.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.it.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.it.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.it.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.ja.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ja.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ja.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.lb.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.lt.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.lt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.lt.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.lv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.mn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
           </argument>
           <argument key="my" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.my.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.nb.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.nl.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.nl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.nl.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle+intl-icu.nl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.nn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.pl.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.pl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.pl.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pt.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.pt.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.pt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.pt.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.pt.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.ro.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ro.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.ru.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.ru.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.ru.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.ru.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.ru.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.sk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.sl.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.sl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.sl.yaml</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.sq.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.sv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.th.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.tl.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.tr.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.tr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.tr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.tr.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.tr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.uk.yaml</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.uk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.uk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.uk.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.uk.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="ur" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.ur.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.ur.xlf</argument>
           </argument>
           <argument key="uz" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.uz.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.vi.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
           </argument>
           <argument key="sr" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sr.xlf</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations\ResetPasswordBundle.sr.xlf</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations\VerifyEmailBundle.sr.xlf</argument>
           </argument>
           <argument key="vn" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations\messages.vn.yaml</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations\messages.vn.yaml</argument>
+          </argument>
+          <argument key="ky" type="collection">
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+          </argument>
+          <argument key="sw" type="collection">
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\framework-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\debug-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\web-profiler-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\twig\extra-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\monolog-bundle/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\maker-bundle\src/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\sensio\framework-extra-bundle\src/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\mercuryseries\flashy-bundle\src/translations</argument>
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\cmen\google-charts-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\framework-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\debug-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\web-profiler-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\twig\extra-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\monolog-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\sensio\framework-extra-bundle\src/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\mercuryseries\flashy-bundle\src/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\cmen\google-charts-bundle/translations</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\stof\doctrine-extensions-bundle\src/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\validator/Resources/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-core/Resources/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\validator/Resources/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\reset-password-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfonycasts\verify-email-bundle\src/Resources/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\framework-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\debug-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\web-profiler-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\twig\extra-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\monolog-bundle/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\maker-bundle\src/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\sensio\framework-extra-bundle\src/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\mercuryseries\flashy-bundle\src/translations</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\cmen\google-charts-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\framework-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\debug-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\web-profiler-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\twig\extra-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\monolog-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\sensio\framework-extra-bundle\src/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\mercuryseries\flashy-bundle\src/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\cmen\google-charts-bundle/translations</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\stof\doctrine-extensions-bundle\src/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -2435,7 +2535,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <argument type="service_closure" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -2472,6 +2572,14 @@
         <argument type="collection">
           <argument type="service_closure" id="security.context_listener.0"/>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -2988,6 +3096,46 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.listener.csrf_protection"/>
@@ -3088,7 +3236,7 @@
       <argument type="service" id=".service_locator.NUKe30Y.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev</argument>
+        <argument key="cache_dir">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3138,7 +3286,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -3201,13 +3349,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/annotations.php</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/annotations.php</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3225,7 +3373,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -3234,7 +3382,7 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/.env.dev.local</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/.env.dev.local</argument>
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -3346,10 +3494,10 @@
           </service>
         </argument>
       </argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/serialization.php</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/serialization.php</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3488,7 +3636,7 @@
       <argument>false</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/sessions</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3534,7 +3682,7 @@
       <deprecated package="symfony/framework-bundle" version="5.1">The "%service_id%" service is deprecated, use "$session-&gt;getAttributeBag()" instead.</deprecated>
     </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/sessions</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
       <deprecated package="symfony/framework-bundle" version="5.3">The "%service_id%" service is deprecated, use "session.storage.factory.mock_file" instead.</deprecated>
@@ -3600,7 +3748,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.EJZuRi7"/>
+      <argument type="service" id=".service_locator.RvBRNnZ"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3706,7 +3854,7 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
-          <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\form/Resources/config/validation.xml</argument>
+          <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\form/Resources/config/validation.xml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -3734,10 +3882,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/validation.php</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/validation.php</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4124,7 +4272,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/profiler</argument>
+      <argument>file:C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -4171,7 +4319,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/App_KernelDevDebugContainer</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -4473,7 +4621,7 @@
       <tag name="doctrine.event_subscriber"/>
       <argument type="tagged_iterator" tag="messenger.receiver"/>
     </service>
-    <service id=".1_ServiceLocator~1uv13GU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".1_ServiceLocator~4yqVhEF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -4492,7 +4640,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.2U1bMG5"/>
+      <argument type="service" id=".service_locator.UEb0PrZ"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4683,7 +4831,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/doctrine/orm/Proxies</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -4719,12 +4867,12 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\src\Entity</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\src\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_xml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver">
       <argument type="collection">
-        <argument key="C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle\config\doctrine">Vich\UploaderBundle\Entity</argument>
+        <argument key="C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle\config\doctrine">Vich\UploaderBundle\Entity</argument>
       </argument>
       <call method="setGlobalBasename">
         <argument>mapping</argument>
@@ -4792,7 +4940,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/migrations</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -4971,7 +5119,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -4993,7 +5141,7 @@
         <argument key="source" type="service">
           <service class="Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider">
             <argument>UTF-8</argument>
-            <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+            <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
             <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
           </service>
         </argument>
@@ -5060,7 +5208,7 @@
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/twig</argument>
+        <argument key="cache">C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
       </argument>
       <call method="addExtension">
@@ -5126,6 +5274,9 @@
       <call method="addExtension">
         <argument type="service" id="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -5170,10 +5321,10 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-        <argument key="C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
-        <argument key="C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
+        <argument key="C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
+        <argument key="C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Form">null</argument>
       </argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/templates</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -5184,76 +5335,84 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\debug-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\debug-bundle/Resources/views</argument>
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\web-profiler-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\web-profiler-bundle/Resources/views</argument>
         <argument>!WebProfiler</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/templates</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/templates</argument>
         <argument>VichUploader</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\vich\uploader-bundle/templates</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\vich\uploader-bundle/templates</argument>
         <argument>!VichUploader</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
         <argument>MercurySeriesFlashy</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\mercuryseries\flashy-bundle\src/Resources/views</argument>
         <argument>!MercurySeriesFlashy</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/templates</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>!email</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\vendor\symfony\twig-bridge/Resources/views/Form</argument>
+        <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\vendor\symfony\twig-bridge/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader"/>
@@ -5279,7 +5438,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -5365,9 +5524,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/templates</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -5401,7 +5560,7 @@
       <argument type="service" id="twig"/>
       <argument>%data_collector.templates%</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -6380,7 +6539,7 @@
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
       <tag name="kernel.reset" method="reset"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\log/dev.log</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\log/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -6402,8 +6561,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy/templates</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -6567,7 +6726,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery</argument>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
       <tag name="maker.command"/>
@@ -6790,7 +6949,7 @@
       </argument>
     </service>
     <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache">
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/vich_uploader</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/vich_uploader</argument>
     </service>
     <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory">
       <argument type="service" id="vich_uploader.metadata_driver.chain"/>
@@ -6805,7 +6964,7 @@
     </service>
     <service id="Vich\UploaderBundle\Metadata\CacheWarmer" class="Vich\UploaderBundle\Metadata\CacheWarmer">
       <tag name="kernel.cache_warmer"/>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/vich_uploader</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/vich_uploader</argument>
       <argument type="service" id="vich_uploader.metadata_reader"/>
     </service>
     <service id="vich_uploader.property_mapping_resolver" class="Vich\UploaderBundle\Mapping\PropertyMappingResolver">
@@ -6967,6 +7126,55 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
+      <tag name="proxy" interface="Knp\Component\Pager\PaginatorInterface"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="request_stack"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+          <argument key="pageOutOfRange">ignore</argument>
+          <argument key="defaultLimit">10</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticlesController" class="App\Controller\ArticlesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticlesController" class="App\Controller\ArticlesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ArticlesController" class="App\Controller\ArticlesController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6976,6 +7184,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GaleriesController" class="App\Controller\GaleriesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GaleriesController" class="App\Controller\GaleriesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GaleriesController" class="App\Controller\GaleriesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PanierController" class="App\Controller\PanierController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RatingController" class="App\Controller\RatingController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RatingController" class="App\Controller\RatingController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RatingController" class="App\Controller\RatingController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6994,6 +7205,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\StatsController" class="App\Controller\StatsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\StatsController" class="App\Controller\StatsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\StatsController" class="App\Controller\StatsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TestController" class="App\Controller\TestController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\TestController" class="App\Controller\TestController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7011,8 +7225,12 @@
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CommentaireType" class="App\Form\CommentaireType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DeleteType" class="App\Form\DeleteType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\DeleteType" class="App\Form\DeleteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GaleriesType" class="App\Form\GaleriesType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\GaleriesType" class="App\Form\GaleriesType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PanierType" class="App\Form\PanierType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PanierType" class="App\Form\PanierType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RatingType" class="App\Form\RatingType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RatingType" class="App\Form\RatingType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ReclamType" class="App\Form\ReclamType" autowire="true" abstract="true"/>
@@ -7037,6 +7255,8 @@
     <service id=".abstract.instanceof.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GaleriesRepository" class="App\Repository\GaleriesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GaleriesRepository" class="App\Repository\GaleriesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PanierRepository" class="App\Repository\PanierRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PanierRepository" class="App\Repository\PanierRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReclamRepository" class="App\Repository\ReclamRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ReclamRepository" class="App\Repository\ReclamRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ReponseRepository" class="App\Repository\ReponseRepository" autowire="true" abstract="true"/>
@@ -7382,6 +7602,13 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.Zhsi5nT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
     <service id=".service_locator.aKM6MDa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7410,11 +7637,10 @@
         <argument key="flashy" type="service_closure" id="mercuryseries_flashy.flashy_notifier"/>
       </argument>
     </service>
-    <service id=".errored.ArKas59" class="App\Controller\Article"/>
-    <service id=".service_locator.YILUh4o" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.QMLTBp2" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="article" type="service_closure" id=".errored.ArKas59"/>
+        <argument key="panier" type="service_closure" id=".errored..service_locator.QMLTBp2.App\Entity\Panier"/>
       </argument>
     </service>
     <service id=".service_locator.5oWwBc." class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7448,6 +7674,21 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="flashy" type="service_closure" id="mercuryseries_flashy.flashy_notifier"/>
         <argument key="galery" type="service_closure" id=".errored..service_locator.CHTeqWB.App\Entity\Galeries"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3A1P0Yq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="panier" type="service_closure" id=".errored..service_locator.3A1P0Yq.App\Entity\Panier"/>
+      </argument>
+    </service>
+    <service id=".service_locator.J1F9dVB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="flashy" type="service_closure" id="mercuryseries_flashy.flashy_notifier"/>
+        <argument key="panier" type="service_closure" id=".errored..service_locator.J1F9dVB.App\Entity\Panier"/>
       </argument>
     </service>
     <service id=".service_locator.4C83FMe" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7497,6 +7738,14 @@
       <argument type="collection">
         <argument key="flashyNotifier" type="service_closure" id="mercuryseries_flashy.flashy_notifier"/>
         <argument key="translator" type="service_closure" id="translator.data_collector"/>
+      </argument>
+    </service>
+    <service id=".service_locator.YEOpnEs" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="reclam" type="service_closure" id=".errored..service_locator.YEOpnEs.App\Entity\Reclam"/>
+        <argument key="reponse" type="service_closure" id=".errored..service_locator.YEOpnEs.App\Entity\Reponse"/>
       </argument>
     </service>
     <service id=".service_locator.pXhSQsU" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7572,21 +7821,24 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.uHuva7U.App\Entity\Users"/>
       </argument>
     </service>
-    <service id=".service_locator.mRetNZl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kK7hJek" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ArticlesController::delete" type="service_closure" id=".service_locator.VA4WuTa"/>
         <argument key="App\Controller\ArticlesController::edit" type="service_closure" id=".service_locator.VA4WuTa"/>
-        <argument key="App\Controller\ArticlesController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController::editComment" type="service_closure" id=".service_locator.LTM1U_q"/>
+        <argument key="App\Controller\ArticlesController::getAverageRatingForArticle" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController::index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\ArticlesController::indexFront" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ArticlesController::indexadmin" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController::indexadmin" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\ArticlesController::new" type="service_closure" id=".service_locator.dRYsSss"/>
         <argument key="App\Controller\ArticlesController::pdf" type="service_closure" id=".service_locator.5oWwBc."/>
+        <argument key="App\Controller\ArticlesController::pdfcart" type="service_closure" id=".service_locator.QMLTBp2"/>
         <argument key="App\Controller\ArticlesController::quickView" type="service_closure" id=".service_locator.LTM1U_q"/>
-        <argument key="App\Controller\ArticlesController::rate" type="service_closure" id=".service_locator.YILUh4o"/>
         <argument key="App\Controller\ArticlesController::show" type="service_closure" id=".service_locator.LTM1U_q"/>
         <argument key="App\Controller\ArticlesController::showadmin" type="service_closure" id=".service_locator.LTM1U_q"/>
         <argument key="App\Controller\ArticlesController::trie3" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController::viewCart" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\CommentaireController::delete" type="service_closure" id=".service_locator.UICLnKr"/>
         <argument key="App\Controller\CommentaireController::edit" type="service_closure" id=".service_locator.UICLnKr"/>
         <argument key="App\Controller\CommentaireController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7596,35 +7848,46 @@
         <argument key="App\Controller\GaleriesController::delete" type="service_closure" id=".service_locator.CHTeqWB"/>
         <argument key="App\Controller\GaleriesController::delete1" type="service_closure" id=".service_locator.CHTeqWB"/>
         <argument key="App\Controller\GaleriesController::edit" type="service_closure" id=".service_locator.CHTeqWB"/>
-        <argument key="App\Controller\GaleriesController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\GaleriesController::index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\GaleriesController::new" type="service_closure" id=".service_locator.dRYsSss"/>
         <argument key="App\Controller\GaleriesController::show" type="service_closure" id=".service_locator.LeQo8VS"/>
+        <argument key="App\Controller\PanierController::delete" type="service_closure" id=".service_locator.J1F9dVB"/>
+        <argument key="App\Controller\PanierController::edit" type="service_closure" id=".service_locator.3A1P0Yq"/>
+        <argument key="App\Controller\PanierController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\PanierController::new" type="service_closure" id=".service_locator.dRYsSss"/>
+        <argument key="App\Controller\PanierController::show" type="service_closure" id=".service_locator.QMLTBp2"/>
         <argument key="App\Controller\RatingController::delete" type="service_closure" id=".service_locator.WBiSglm"/>
         <argument key="App\Controller\RatingController::edit" type="service_closure" id=".service_locator.WBiSglm"/>
         <argument key="App\Controller\RatingController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\RatingController::new" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\RatingController::rateArticle" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\RatingController::show" type="service_closure" id=".service_locator.4C83FMe"/>
         <argument key="App\Controller\ReclamController::delete" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ReclamController::edit" type="service_closure" id=".service_locator.d8JBc8s"/>
         <argument key="App\Controller\ReclamController::edit2" type="service_closure" id=".service_locator.ReFNSxP"/>
-        <argument key="App\Controller\ReclamController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ReclamController::index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\ReclamController::index2" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ReclamController::new" type="service_closure" id=".service_locator.dRYsSss"/>
         <argument key="App\Controller\ReclamController::pdf" type="service_closure" id=".service_locator.jDSaC9t"/>
+        <argument key="App\Controller\ReclamController::satistied" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ReclamController::show" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ReclamController::show2" type="service_closure" id=".service_locator.ReFNSxP"/>
-        <argument key="App\Controller\ReclamController::statistics" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ReclamController::triepardate" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ReclamController::unsatistied" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.MzY4Jsn"/>
         <argument key="App\Controller\RegistrationController::verify" type="service_closure" id=".service_locator.dhKgwb0"/>
         <argument key="App\Controller\RegistrationController::verifyUserEmail" type="service_closure" id=".service_locator.dhKgwb0"/>
+        <argument key="App\Controller\ReponseController::edit" type="service_closure" id=".service_locator.YEOpnEs"/>
         <argument key="App\Controller\ReponseController::new" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ResetPasswordController::request" type="service_closure" id=".service_locator.pXhSQsU"/>
         <argument key="App\Controller\ResetPasswordController::reset" type="service_closure" id=".service_locator.kdKsWx5"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.UAN0xJG"/>
+        <argument key="App\Controller\StatsController::findbyNbcomment" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\StatsController::stats" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\StatsController::statsartist" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\TypereclamationController::delete" type="service_closure" id=".service_locator.E8Yeq5o"/>
         <argument key="App\Controller\TypereclamationController::edit" type="service_closure" id=".service_locator.E8Yeq5o"/>
-        <argument key="App\Controller\TypereclamationController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\TypereclamationController::index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\TypereclamationController::new" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\TypereclamationController::show" type="service_closure" id=".service_locator.I5EDONi"/>
         <argument key="App\Controller\UsersController::block" type="service_closure" id=".service_locator.uHuva7U"/>
@@ -7632,28 +7895,30 @@
         <argument key="App\Controller\UsersController::edit" type="service_closure" id=".service_locator.uyeIuaL"/>
         <argument key="App\Controller\UsersController::editAdmin" type="service_closure" id=".service_locator.uyeIuaL"/>
         <argument key="App\Controller\UsersController::editForAdmin" type="service_closure" id=".service_locator.uyeIuaL"/>
-        <argument key="App\Controller\UsersController::index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\UsersController::index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\UsersController::new" type="service_closure" id=".service_locator.1oueM0n"/>
         <argument key="App\Controller\UsersController::newForAdmin" type="service_closure" id=".service_locator.1oueM0n"/>
         <argument key="App\Controller\UsersController::show" type="service_closure" id=".service_locator.Sgq.tmb"/>
         <argument key="App\Controller\UsersController::unblock" type="service_closure" id=".service_locator.uHuva7U"/>
-        <argument key="App\Controller\UsersController::usersBySexeChartAction" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Controller\ArticlesController:delete" type="service_closure" id=".service_locator.VA4WuTa"/>
         <argument key="App\Controller\ArticlesController:edit" type="service_closure" id=".service_locator.VA4WuTa"/>
-        <argument key="App\Controller\ArticlesController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController:editComment" type="service_closure" id=".service_locator.LTM1U_q"/>
+        <argument key="App\Controller\ArticlesController:getAverageRatingForArticle" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController:index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\ArticlesController:indexFront" type="service_closure" id=".service_locator.aKM6MDa"/>
-        <argument key="App\Controller\ArticlesController:indexadmin" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController:indexadmin" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\ArticlesController:new" type="service_closure" id=".service_locator.dRYsSss"/>
         <argument key="App\Controller\ArticlesController:pdf" type="service_closure" id=".service_locator.5oWwBc."/>
+        <argument key="App\Controller\ArticlesController:pdfcart" type="service_closure" id=".service_locator.QMLTBp2"/>
         <argument key="App\Controller\ArticlesController:quickView" type="service_closure" id=".service_locator.LTM1U_q"/>
-        <argument key="App\Controller\ArticlesController:rate" type="service_closure" id=".service_locator.YILUh4o"/>
         <argument key="App\Controller\ArticlesController:show" type="service_closure" id=".service_locator.LTM1U_q"/>
         <argument key="App\Controller\ArticlesController:showadmin" type="service_closure" id=".service_locator.LTM1U_q"/>
         <argument key="App\Controller\ArticlesController:trie3" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ArticlesController:viewCart" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\CommentaireController:delete" type="service_closure" id=".service_locator.UICLnKr"/>
         <argument key="App\Controller\CommentaireController:edit" type="service_closure" id=".service_locator.UICLnKr"/>
         <argument key="App\Controller\CommentaireController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
@@ -7663,35 +7928,46 @@
         <argument key="App\Controller\GaleriesController:delete" type="service_closure" id=".service_locator.CHTeqWB"/>
         <argument key="App\Controller\GaleriesController:delete1" type="service_closure" id=".service_locator.CHTeqWB"/>
         <argument key="App\Controller\GaleriesController:edit" type="service_closure" id=".service_locator.CHTeqWB"/>
-        <argument key="App\Controller\GaleriesController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\GaleriesController:index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\GaleriesController:new" type="service_closure" id=".service_locator.dRYsSss"/>
         <argument key="App\Controller\GaleriesController:show" type="service_closure" id=".service_locator.LeQo8VS"/>
+        <argument key="App\Controller\PanierController:delete" type="service_closure" id=".service_locator.J1F9dVB"/>
+        <argument key="App\Controller\PanierController:edit" type="service_closure" id=".service_locator.3A1P0Yq"/>
+        <argument key="App\Controller\PanierController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\PanierController:new" type="service_closure" id=".service_locator.dRYsSss"/>
+        <argument key="App\Controller\PanierController:show" type="service_closure" id=".service_locator.QMLTBp2"/>
         <argument key="App\Controller\RatingController:delete" type="service_closure" id=".service_locator.WBiSglm"/>
         <argument key="App\Controller\RatingController:edit" type="service_closure" id=".service_locator.WBiSglm"/>
         <argument key="App\Controller\RatingController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\RatingController:new" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\RatingController:rateArticle" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\RatingController:show" type="service_closure" id=".service_locator.4C83FMe"/>
         <argument key="App\Controller\ReclamController:delete" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ReclamController:edit" type="service_closure" id=".service_locator.d8JBc8s"/>
         <argument key="App\Controller\ReclamController:edit2" type="service_closure" id=".service_locator.ReFNSxP"/>
-        <argument key="App\Controller\ReclamController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ReclamController:index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\ReclamController:index2" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ReclamController:new" type="service_closure" id=".service_locator.dRYsSss"/>
         <argument key="App\Controller\ReclamController:pdf" type="service_closure" id=".service_locator.jDSaC9t"/>
+        <argument key="App\Controller\ReclamController:satistied" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ReclamController:show" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ReclamController:show2" type="service_closure" id=".service_locator.ReFNSxP"/>
-        <argument key="App\Controller\ReclamController:statistics" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\ReclamController:triepardate" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\ReclamController:unsatistied" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.MzY4Jsn"/>
         <argument key="App\Controller\RegistrationController:verify" type="service_closure" id=".service_locator.dhKgwb0"/>
         <argument key="App\Controller\RegistrationController:verifyUserEmail" type="service_closure" id=".service_locator.dhKgwb0"/>
+        <argument key="App\Controller\ReponseController:edit" type="service_closure" id=".service_locator.YEOpnEs"/>
         <argument key="App\Controller\ReponseController:new" type="service_closure" id=".service_locator.ReFNSxP"/>
         <argument key="App\Controller\ResetPasswordController:request" type="service_closure" id=".service_locator.pXhSQsU"/>
         <argument key="App\Controller\ResetPasswordController:reset" type="service_closure" id=".service_locator.kdKsWx5"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.UAN0xJG"/>
+        <argument key="App\Controller\StatsController:findbyNbcomment" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\StatsController:stats" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\StatsController:statsartist" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\TypereclamationController:delete" type="service_closure" id=".service_locator.E8Yeq5o"/>
         <argument key="App\Controller\TypereclamationController:edit" type="service_closure" id=".service_locator.E8Yeq5o"/>
-        <argument key="App\Controller\TypereclamationController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\TypereclamationController:index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\TypereclamationController:new" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="App\Controller\TypereclamationController:show" type="service_closure" id=".service_locator.I5EDONi"/>
         <argument key="App\Controller\UsersController:block" type="service_closure" id=".service_locator.uHuva7U"/>
@@ -7699,12 +7975,11 @@
         <argument key="App\Controller\UsersController:edit" type="service_closure" id=".service_locator.uyeIuaL"/>
         <argument key="App\Controller\UsersController:editAdmin" type="service_closure" id=".service_locator.uyeIuaL"/>
         <argument key="App\Controller\UsersController:editForAdmin" type="service_closure" id=".service_locator.uyeIuaL"/>
-        <argument key="App\Controller\UsersController:index" type="service_closure" id=".service_locator.aKM6MDa"/>
+        <argument key="App\Controller\UsersController:index" type="service_closure" id=".service_locator.Zhsi5nT"/>
         <argument key="App\Controller\UsersController:new" type="service_closure" id=".service_locator.1oueM0n"/>
         <argument key="App\Controller\UsersController:newForAdmin" type="service_closure" id=".service_locator.1oueM0n"/>
         <argument key="App\Controller\UsersController:show" type="service_closure" id=".service_locator.Sgq.tmb"/>
         <argument key="App\Controller\UsersController:unblock" type="service_closure" id=".service_locator.uHuva7U"/>
-        <argument key="App\Controller\UsersController:usersBySexeChartAction" type="service_closure" id=".service_locator.aKM6MDa"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
       </argument>
@@ -7768,14 +8043,16 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.EJZuRi7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.RvBRNnZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ArticleTypeAffect" type="service_closure" id="App\Form\ArticleTypeAffect"/>
         <argument key="App\Form\ArticlesType" type="service_closure" id="App\Form\ArticlesType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service_closure" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\CommentaireType" type="service_closure" id="App\Form\CommentaireType"/>
+        <argument key="App\Form\DeleteType" type="service_closure" id="App\Form\DeleteType"/>
         <argument key="App\Form\GaleriesType" type="service_closure" id="App\Form\GaleriesType"/>
+        <argument key="App\Form\PanierType" type="service_closure" id="App\Form\PanierType"/>
         <argument key="App\Form\RatingType" type="service_closure" id="App\Form\RatingType"/>
         <argument key="App\Form\ReclamType" type="service_closure" id="App\Form\ReclamType"/>
         <argument key="App\Form\ReclamType2" type="service_closure" id="App\Form\ReclamType2"/>
@@ -7876,11 +8153,12 @@
         <argument key="vich_uploader.listener.upload.images" type="service_closure" id="vich_uploader.listener.upload.images"/>
       </argument>
     </service>
-    <service id=".service_locator.2U1bMG5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.UEb0PrZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ArticlesRepository" type="service_closure" id="App\Repository\ArticlesRepository"/>
         <argument key="App\Repository\GaleriesRepository" type="service_closure" id="App\Repository\GaleriesRepository"/>
+        <argument key="App\Repository\PanierRepository" type="service_closure" id="App\Repository\PanierRepository"/>
         <argument key="App\Repository\ReclamRepository" type="service_closure" id="App\Repository\ReclamRepository"/>
         <argument key="App\Repository\ReponseRepository" type="service_closure" id="App\Repository\ReponseRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service_closure" id="App\Repository\ResetPasswordRequestRepository"/>
@@ -8154,6 +8432,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\ArticleController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ArticleController"/>
+      <argument>App\Controller\ArticleController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\ArticlesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ArticlesController"/>
       <argument>App\Controller\ArticlesController</argument>
@@ -8169,6 +8453,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\GaleriesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\GaleriesController"/>
       <argument>App\Controller\GaleriesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\PanierController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PanierController"/>
+      <argument>App\Controller\PanierController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -8205,6 +8495,12 @@
     <service id=".service_locator.mx0UMmY.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\StatsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\StatsController"/>
+      <argument>App\Controller\StatsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
@@ -8410,12 +8706,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.mRetNZl"/>
+      <argument type="service" id=".service_locator.kK7hJek"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.mRetNZl"/>
+      <argument type="service" id=".service_locator.kK7hJek"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8441,16 +8737,21 @@
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.LTM1U_q.App\Entity\Articles" class="App\Entity\Articles"/>
     <service id=".errored..service_locator.VA4WuTa.App\Entity\Articles" class="App\Entity\Articles"/>
+    <service id=".errored..service_locator.QMLTBp2.App\Entity\Panier" class="App\Entity\Panier"/>
     <service id=".errored..service_locator.5oWwBc..App\Entity\Articles" class="App\Entity\Articles"/>
     <service id=".errored..service_locator.TmMBpdA.App\Entity\Commentaire" class="App\Entity\Commentaire"/>
     <service id=".errored..service_locator.UICLnKr.App\Entity\Commentaire" class="App\Entity\Commentaire"/>
     <service id=".errored..service_locator.LeQo8VS.App\Entity\Galeries" class="App\Entity\Galeries"/>
     <service id=".errored..service_locator.CHTeqWB.App\Entity\Galeries" class="App\Entity\Galeries"/>
+    <service id=".errored..service_locator.3A1P0Yq.App\Entity\Panier" class="App\Entity\Panier"/>
+    <service id=".errored..service_locator.J1F9dVB.App\Entity\Panier" class="App\Entity\Panier"/>
     <service id=".errored..service_locator.4C83FMe.App\Entity\Rating" class="App\Entity\Rating"/>
     <service id=".errored..service_locator.WBiSglm.App\Entity\Rating" class="App\Entity\Rating"/>
     <service id=".errored..service_locator.ReFNSxP.App\Entity\Reclam" class="App\Entity\Reclam"/>
     <service id=".errored..service_locator.d8JBc8s.App\Entity\Reclam" class="App\Entity\Reclam"/>
     <service id=".errored..service_locator.jDSaC9t.App\Entity\Reclam" class="App\Entity\Reclam"/>
+    <service id=".errored..service_locator.YEOpnEs.App\Entity\Reclam" class="App\Entity\Reclam"/>
+    <service id=".errored..service_locator.YEOpnEs.App\Entity\Reponse" class="App\Entity\Reponse"/>
     <service id=".errored..service_locator.I5EDONi.App\Entity\Typereclamation" class="App\Entity\Typereclamation"/>
     <service id=".errored..service_locator.E8Yeq5o.App\Entity\Typereclamation" class="App\Entity\Typereclamation"/>
     <service id=".errored..service_locator.Sgq.tmb.App\Entity\Users" class="App\Entity\Users"/>
@@ -9161,78 +9462,78 @@
       </argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>ip8r+3UT7-</argument>
+      <argument>l2W0y1uSN9</argument>
       <argument>0</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/app</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>jTJMVrJX7W</argument>
+      <argument>Qj5XQg3pJL</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>RCXo90yZae</argument>
+      <argument>61XsBxZcHu</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>stpaZFtVG1</argument>
+      <argument>HJRt3znUqB</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>LkrUdPdoD6</argument>
+      <argument>BszlY7wSa0</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>RgcgxTX44Z</argument>
+      <argument>-fJ3qWmnKh</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
-      <argument>qzr6OOCfkj</argument>
+      <argument>9n22nzTeHx</argument>
       <argument>0</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/app</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.validator_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>JbVItp0fqr</argument>
+      <argument>FCR3LdCX+C</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.doctrine.orm.default.result.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.query.recorder_inner" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.security_expression_language.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface">
-      <argument>RQThurRrQ6</argument>
+      <argument>IRUHv8W0-B</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:\Users\Acer\Downloads\Pidevsymfonyy\var\cache\dev/pools/system</argument>
+      <argument>C:\Users\Acer\Desktop\MyArt_Symfony-Gallery\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -9437,9 +9738,10 @@
     <service id="mercuryseries_flashy.session_store" alias="mercuryseries_flashy.symfony_session_store"/>
     <service id="MercurySeries\FlashyBundle\FlashyNotifier" alias="mercuryseries_flashy.flashy_notifier"/>
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.mRetNZl"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.kK7hJek"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9464,6 +9766,8 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.4rIzG_f" alias=".service_locator.CHTeqWB"/>
+    <service id=".service_locator.3VBnLrY" alias=".service_locator.3A1P0Yq"/>
+    <service id=".service_locator.0udQrtq" alias=".service_locator.J1F9dVB"/>
     <service id=".service_locator.GKjwYgZ" alias=".service_locator.WBiSglm"/>
     <service id=".service_locator.W0B9PTG" alias=".service_locator.ReFNSxP"/>
     <service id=".service_locator..VixDS3" alias=".service_locator.d8JBc8s"/>
@@ -9474,9 +9778,9 @@
     <service id=".service_locator.BvyCjKV" alias=".service_locator.uyeIuaL"/>
     <service id=".service_locator.EZl36iA" alias=".service_locator.YdtL5XU"/>
     <service id=".service_locator.FohkyTC" alias=".service_locator.uHuva7U"/>
-    <service id=".service_locator.vDB20CQ" alias=".service_locator.mRetNZl"/>
+    <service id=".service_locator..hPQtrq" alias=".service_locator.kK7hJek"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.W2gSYic" alias=".service_locator.EJZuRi7"/>
+    <service id=".service_locator.cg3rqNH" alias=".service_locator.RvBRNnZ"/>
     <service id=".service_locator.lh0pSrn" alias=".service_locator.riMy2z_"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -9502,15 +9806,19 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
+    <service id=".service_locator.i87CtER" alias=".service_locator.Zhsi5nT"/>
     <service id=".service_locator.bInR.ll" alias=".service_locator.aKM6MDa"/>
     <service id=".service_locator.Tc1DfiJ" alias=".service_locator.LTM1U_q"/>
     <service id=".service_locator.p.5Z4Ft" alias=".service_locator.dRYsSss"/>
     <service id=".service_locator.uM5BGNo" alias=".service_locator.VA4WuTa"/>
+    <service id=".service_locator.E82LLOl" alias=".service_locator.QMLTBp2"/>
     <service id=".service_locator.rzA5nAL" alias=".service_locator.5oWwBc."/>
     <service id=".service_locator.jah5ZQ9" alias=".service_locator.TmMBpdA"/>
     <service id=".service_locator.eJu2Fu." alias=".service_locator.UICLnKr"/>
     <service id=".service_locator.cv.s43K" alias=".service_locator.LeQo8VS"/>
     <service id=".service_locator.yhcTgHd" alias=".service_locator.CHTeqWB"/>
+    <service id=".service_locator.bvfY1wj" alias=".service_locator.3A1P0Yq"/>
+    <service id=".service_locator.Jk_ljD0" alias=".service_locator.J1F9dVB"/>
     <service id=".service_locator.SEIRRMh" alias=".service_locator.4C83FMe"/>
     <service id=".service_locator.T4eBiGr" alias=".service_locator.WBiSglm"/>
     <service id=".service_locator.IHvQMiS" alias=".service_locator.ReFNSxP"/>
@@ -9518,6 +9826,7 @@
     <service id=".service_locator.IJfyv8Q" alias=".service_locator.jDSaC9t"/>
     <service id=".service_locator.R6CjvEx" alias=".service_locator.MzY4Jsn"/>
     <service id=".service_locator.H.jSkji" alias=".service_locator.dhKgwb0"/>
+    <service id=".service_locator.CE.XH_N" alias=".service_locator.YEOpnEs"/>
     <service id=".service_locator.vmloCRj" alias=".service_locator.pXhSQsU"/>
     <service id=".service_locator.Gf4Gasx" alias=".service_locator.kdKsWx5"/>
     <service id=".service_locator.SLbkcyh" alias=".service_locator.UAN0xJG"/>

@@ -56,8 +56,8 @@ class RegistrationFormType extends AbstractType
             ->add('role', ChoiceType::class, [
                 'label' => false,'attr'=>['class'=>'form-control'],
                 'choices' => [
-                    'Artist' => 'artist',
-                    'Client' => 'client',
+                    'Artist' => 'Artist',
+                    'Client' => 'Client',
                 ],
                 'expanded' => true
             ])

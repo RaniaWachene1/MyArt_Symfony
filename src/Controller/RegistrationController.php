@@ -143,7 +143,7 @@ class RegistrationController extends AbstractController
         }
         else if (in_array('ROLE_ARTIST', $roles, true)){
 
-            return $this->redirectToRoute('app_test0');
+            return $this->redirectToRoute('app_articles_index');
         }
         else{
 

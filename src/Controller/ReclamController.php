@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Panier;
 use App\Entity\Reclam;
 use App\Entity\Reponse;
 use App\Entity\Typereclamation;
@@ -11,6 +12,7 @@ use App\Form\ReclamType2;
 use Cassandra\Date;
 use Doctrine\ORM\EntityManagerInterface;
 use Dompdf\Dompdf;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\File;
@@ -35,12 +37,17 @@ class ReclamController extends AbstractController
             ->getResult();
     }
     #[Route('/', name: 'app_reclam_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager,PaginatorInterface $paginator,Request $request): Response
     {
        /* $reclams = $entityManager
             ->getRepository(Reclam::class)
             ->findAll();*/
-        $reclams=$this->triepardate($entityManager);
+        $donnees = $this->triepardate($entityManager);
+        $reclams=$paginator->paginate(
+            $donnees,// Requête contenant les données à paginer (ici les articles)
+            $request->query->getInt('page',1),// Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            2  // Nombre de résultats par page
+        );
 
         return $this->render('reclam/index.html.twig', [
             'reclams' => $reclams,
@@ -48,12 +55,14 @@ class ReclamController extends AbstractController
     }
     #[Route('/myclaims', name: 'app_reclam_index2', methods: ['GET'])]
     public function index2(EntityManagerInterface $entityManager): Response
-    {        $user=$this->get('security.token_storage')->getToken()->getUser();
+    {   $user=$this->get('security.token_storage')->getToken()->getUser();
+        $panierUser=$entityManager->getRepository(Panier::class)->findOneBy(['idUser'=>$user]);
         $reclams = $entityManager
             ->getRepository(Reclam::class)
             ->findByIdUser($user);
         return $this->render('reclam/indexFront.html.twig', [
             'reclams' => $reclams,
+            'cart'=>$panierUser,
         ]);
     }
     #[Route('/new', name: 'app_reclam_new', methods: ['GET', 'POST'])]
@@ -61,6 +70,7 @@ class ReclamController extends AbstractController
     {
         $reclam = new Reclam();
         $user=$this->get('security.token_storage')->getToken()->getUser();
+        $panierUser=$entityManager->getRepository(Panier::class)->findOneBy(['idUser'=>$user]);
         $form = $this->createForm(ReclamType::class, $reclam);
         $form->handleRequest($request);
 
@@ -83,6 +93,7 @@ class ReclamController extends AbstractController
         return $this->renderForm('reclam/new.html.twig', [
             'reclam' => $reclam,
             'form' => $form,
+            'cart'=>$panierUser,
 
         ]);
     }
@@ -99,18 +110,36 @@ class ReclamController extends AbstractController
     }
     #[Route('/show2/{idr}', name: 'app_reclam_show2', methods: ['GET'])]
     public function show2(Reclam $reclam,EntityManagerInterface $entityManager): Response
-    {
+    {     $user=$this->get('security.token_storage')->getToken()->getUser();
+        $panierUser=$entityManager->getRepository(Panier::class)->findOneBy(['idUser'=>$user]);
         $response=$entityManager->getRepository(Reponse::class)->findByIdrec($reclam->getIdr());
         dump($reclam->getImage());
         return $this->render('reclam/show2.html.twig', [
             'reclam' => $reclam,
             'reponses'=>$response,
+            'cart'=>$panierUser,
         ]);
+    }
+    #[Route('/satisfied/{idr}/{idrep}', name: 'app_reclam_satisfied', methods: ['GET','POST'])]
+    public function satistied(Reclam $reclam,EntityManagerInterface $entityManager,$idrep):Response
+    {
+        $reponse=$entityManager->getRepository(Reponse::class)->find($idrep);
+        $reponse->setEtat("Satisfied");
+        $entityManager->flush();
+        return $this->redirectToRoute('app_reclam_show2',['idr'=>$reclam->getIdr()],Response::HTTP_SEE_OTHER);
+    }
+    #[Route('/unsatisfied/{idr}/{idrep}', name: 'app_reclam_unsatisfied', methods: ['GET','POST'])]
+    public function unsatistied(Reclam $reclam,EntityManagerInterface $entityManager,$idrep):Response
+    {   $reponse=$entityManager->getRepository(Reponse::class)->find($idrep);
+        $reponse->setEtat("Unsatisfied");
+        $entityManager->flush();
+        return $this->redirectToRoute('app_reclam_show2',['idr'=>$reclam->getIdr()],Response::HTTP_SEE_OTHER);
     }
     //client update his claim
     #[Route('/{idr}/edit2', name: 'app_reclam_edit2', methods: ['GET', 'POST'])]
     public function edit2(Request $request, Reclam $reclam, EntityManagerInterface $entityManager): Response
-    {
+    {   $user=$this->get('security.token_storage')->getToken()->getUser();
+        $panierUser=$entityManager->getRepository(Panier::class)->findOneBy(['idUser'=>$user]);
         $form = $this->createForm(ReclamType::class, $reclam);
         $form->handleRequest($request);
 
@@ -124,6 +153,7 @@ class ReclamController extends AbstractController
         return $this->renderForm('reclam/edit2.html.twig', [
             'reclam' => $reclam,
             'form' => $form,
+            'cart'=>$panierUser,
         ]);
     }
     //admin updates client claim
@@ -182,32 +212,7 @@ class ReclamController extends AbstractController
         return $this->redirectToRoute('app_reclam_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    /**
-     * @Route("/claim/stats", name="app_reclam_stats")
-     */
-    public function statistics(EntityManagerInterface $entityManager): Response
-    {
-        $reclamations = $entityManager->getRepository(Reclam::class)->findAll();
-        $typeReclamations = $entityManager->getRepository(Typereclamation::class)->findAll();
 
-        $data = array();
-        foreach ($typeReclamations as $typeReclamation) {
-            $count = 0;
-            foreach ($reclamations as $reclamation) {
-                if ($reclamation->getIdtyper() == $typeReclamation) {
-                    $count++;
-                }
-            }
-            $data[] = array(
-                'type' => $typeReclamation->getNom(),
-                'count' => $count
-            );
-        }
-
-        return $this->render('reclam/stats.html.twig', [
-            'data' => json_encode($data)
-        ]);
-    }
 
 
 }

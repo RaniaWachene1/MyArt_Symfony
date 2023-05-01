@@ -4,6 +4,7 @@
 	<title>Shoping Cart</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ asset('bundles/mercuryseriesflashy/css/flashy.css') }}">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{{asset('assets1/images/icons/Alogo.png')}}"/>
 <!--===============================================================================================-->
@@ -39,25 +40,28 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						{% if app.user %}
+							{{ app.user.prenomUser }} {{ app.user.nomUser }}
+						{% endif %}
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
+						{% if app.user %}
+							<a href="{{ path('app_users_edit',{'id':app.user.id}) }}" class="flex-c-m p-lr-10 trans-04">
+								My Account
+							</a>
+							<a href="{{ path('app_reclam_index2') }}" class="flex-c-m trans-04 p-lr-25">
+								My Claims
+							</a>
+							<a href="{{ path('app_logout') }}" class="flex-c-m p-lr-10 trans-04">
+								Logout
+							</a>
+						{% else %}
+							<a href="{{ path('app_login') }}" class="flex-c-m p-lr-10 trans-04">
+								Login
+							</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -91,7 +95,7 @@
 							</li>
 
 							<li>
-								<a href="about.html">Claim</a>
+								<a href="{{ path('app_reclam_new') }}">Claim</a>
 							</li>
 
 							
@@ -152,27 +156,28 @@
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						{% if app.user %}
+							{{ app.user.prenomUser }} {{ app.user.nomUser }}
+						{% endif %}
 					</div>
-				</li>
 
-				<li>
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
-						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
-						</a>
+						{% if app.user %}
+							<a href="{{ path('app_users_edit',{'id':app.user.id}) }}" class="flex-c-m p-lr-10 trans-04">
+								My Account
+							</a>
+							<a href="{{ path('app_reclam_index2') }}" class="flex-c-m trans-04 p-lr-25">
+								My Claims
+							</a>
+							<a href="{{ path('app_logout') }}" class="flex-c-m p-lr-10 trans-04">
+								Logout
+							</a>
+						{% else %}
+							<a href="{{ path('app_login') }}" class="flex-c-m p-lr-10 trans-04">
+								Login
+							</a>
+						{% endif %}
 					</div>
 				</li>
 			</ul>
@@ -230,6 +235,7 @@
 	</header>
 
 	<!-- Cart -->
+	{% block yourcart %}
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
 
@@ -314,7 +320,7 @@
 		</div>
 	</div>
 
-
+{% endblock %}
 	<!-- breadcrumb -->
 	<div class="container">
 		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
@@ -684,5 +690,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 <script src="{{asset('assets1/js/main.js')}}"></script>
+ <!-- Flashy depends on jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+
+    <!-- Load Flashy default JavaScript -->
+    <script src="{{ asset('bundles/mercuryseriesflashy/js/flashy.js') }}"></script>
+    <!-- Include Flashy default partial -->
+    {{ include('@MercurySeriesFlashy/flashy.html.twig') }}
 </body>
 </html>

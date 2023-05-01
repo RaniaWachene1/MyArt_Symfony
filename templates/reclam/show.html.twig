@@ -51,11 +51,23 @@
             <tr>
                 <th>Object</th>
                 <th>Description</th>
+                <th>Status</th>
+
             </tr>
                 {% for reponse in reponses %}
             <tr>
                 <td>{{ reponse.objet}}</td>
                 <td>{{ reponse.description }}</td>
+                <td>
+                    {% if reponse.etat is not null and reponse.etat=="Satisfied" %}
+                    <img src="{{ asset('images/satisfied.png') }}" height="50" width="50">
+                    {% elseif reponse.etat is not null and reponse.etat=="Unsatisfied" %}
+                        <img src="{{ asset('images/unsatisfied.png') }}" height="50" width="50">
+                    {% endif %}
+                </td>
+                {% if reponse.etat =="Unsatisfied" %}
+                <td> <button class="btn btn-primary" onclick="window.location.href=' {{ path('app_reponse_new', {'idr':reclam.idr}) }}'">Send new response</button></td>
+           {% endif %}
             </tr>
 
             {% endfor %}

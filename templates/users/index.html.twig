@@ -43,13 +43,16 @@
                 {% endif %}
                 <td>
                     {% if user.block=="unBlocked" %}
-                        <a href="{{ path('app_users_block',{'id':user.id}) }}"><img src="{{ asset('images/lock.png') }}" width="30" height="30"></a>
+                        <a href="{{ path('app_users_block',{'id':user.id}) }}"><img src="{{ asset('images/unlocked.png') }}" width="30" height="30"></a>
                         {% else %}
-                            <a href="{{ path('app_users_unblock',{'id':user.id}) }}"><img src="{{ asset('images/unlocked.png') }}" width="30" height="30"></a>
+                            <a href="{{ path('app_users_unblock',{'id':user.id}) }}"><img src="{{ asset('images/lock.png') }}" width="30" height="30"></a>
                             {% endif %}
                 <td>
                 <button class="btn btn-primary" onclick="window.location.href='{{ path('app_users_show', {'id': user.id}) }}'">show</button>
                    &nbsp;&nbsp;
+                   &nbsp;&nbsp;
+                   &nbsp;&nbsp;
+                 
                  <button class="btn btn-primary" onclick="window.location.href=' {{ path('app_users_edit2', {'id': user.id}) }}'">edit</button>
                 </td>
             </tr>
@@ -61,8 +64,20 @@
         {% endfor %}
         </tbody>
     </table>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-primary" onclick="window.location.href='{{ path('app_users_new2' ) }}'"> Create new</button>
-                <button class="btn btn-primary" onclick="window.location.href='{{ path('app_users_stats' ) }}'">Stats</button>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="text-center">
+
+                    {{ knp_pagination_render(users) }}
+
+                </div>
             </div>
           </div>
           </div>

@@ -50,8 +50,13 @@
     </table>
                 <div class="text-center">
                 <button class="btn btn-primary" onclick="window.location.href='{{ path('app_typereclamation_new' ) }}'"> Create new Type</button>
-                    <button class="btn btn-primary" onclick="window.location.href='{{ path('app_reclam_stats' ) }}'">Stats</button>
             </div>
+
+                <div class="text-center">
+
+                    {{ knp_pagination_render(reclams) }}
+
+                </div>
             </div>
         </div>
 

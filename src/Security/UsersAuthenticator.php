@@ -65,20 +65,19 @@ class UsersAuthenticator extends AbstractLoginFormAuthenticator
             $request->getSession()->getFlashBag()->add('danger', 'Your account is blocked ,please contact the admin.');
             return new RedirectResponse($this->urlGenerator->generate(self::LOGIN_ROUTE));
         }
-
-            // Get list of roles for current user
+        // Get list of roles for current user
             $roles = $token->getUser()->getRoles();
             // Tranform this list in array
 
             // If is a admin we redirect to the backoffice area
             if (in_array('ROLE_ADMIN', $roles, true)){
-                $redirection = new RedirectResponse($this->router->generate('app_users_index'));
+                $redirection = new RedirectResponse($this->router->generate('app_stats'));
             }
             else if (in_array('ROLE_ARTIST', $roles, true)){
-                $redirection = new RedirectResponse($this->router->generate('app_test0'));
+                $redirection = new RedirectResponse($this->router->generate('app_stats_artist'));
             }
             else{
-                $redirection = new RedirectResponse($this->router->generate('app_test'));
+                $redirection = new RedirectResponse($this->router->generate('app_articles_indexfront'));
             }
             return $redirection;
 

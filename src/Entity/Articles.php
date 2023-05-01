@@ -46,6 +46,11 @@ class Articles
      * @Assert\NotBlank(message="Please enter the artist  name")
      */
     private $nomArtiste;
+    /**
+     *
+     * @ORM\Column(name="nbcomment", type="integer", length=255, nullable=true)
+     */
+    private $nbcomment;
 
     /**
      * @var float
@@ -102,11 +107,11 @@ class Articles
     private $idUser;
 
     /**
-     * @var int
+     * @var Collection|Rating[]
      *
-     * @ORM\Column(name="rate", type="integer", nullable=false)
+     * @ORM\OneToMany(targetEntity="Rating", mappedBy="idArticle",cascade={"detach"})
      */
-    private $rate;
+    private $ratings;
 
     /**
      * @var \Galeries
@@ -132,19 +137,15 @@ class Articles
      * )
      */
     private $idPanier = array();
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Favoris",mappedBy="idArticle",cascade={"detach"})
-     */
-    private $idFavoris = array();
+
 
     /**
      * Constructor
      */
     public function __construct()
-    { $this->idFavoris = new \Doctrine\Common\Collections\ArrayCollection();
+    {
         $this->idPanier = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->ratings = new \Doctrine\Common\Collections\ArrayCollection();
     }
     public function getIdArticle(): ?int
     {
@@ -244,18 +245,78 @@ class Articles
 
         return $this;
     }
-
-    public function getRate(): ?int
+    /**
+     * @return Collection|Rating[]
+     */
+    public function getRatings(): Collection
     {
-        return $this->rate;
+        return $this->ratings;
     }
 
-    public function setRate(int $rate): self
+    /**
+     * @param Rating $rating
+     * @return $this
+     */
+    public function addRating(Rating $rating): self
     {
-        $this->rate = $rate;
+        if (!$this->ratings->contains($rating)) {
+            $this->ratings[] = $rating;
+            $rating->setArticle($this);
+        }
 
         return $this;
     }
+
+    /**
+     * @param Rating $rating
+     * @return $this
+     */
+    public function removeRating(Rating $rating): self
+    {
+        if ($this->ratings->contains($rating)) {
+            $this->ratings->removeElement($rating);
+            // set the owning side to null (unless already changed)
+            if ($rating->getArticle() === $this) {
+                $rating->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+    /**
+     * @return float|null
+     */
+    public function getAverageRating(): ?float
+    {
+        $total = 0;
+        $count = $this->ratings->count();
+        if ($count === 0) {
+            return null;
+        }
+
+        foreach ($this->ratings as $rating) {
+            $total += $rating->getValue();
+        }
+
+        return $total / $count;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbcomment()
+    {
+        return $this->nbcomment;
+    }
+
+    /**
+     * @param mixed $nbcomment
+     */
+    public function setNbcomment($nbcomment): void
+    {
+        $this->nbcomment = $nbcomment;
+    }
+
 
     public function getIdGalerie(): ?Galeries
     {
@@ -292,30 +353,9 @@ class Articles
 
         return $this;
     }
-    /**
-     * @return Collection<int, Favoris>
-     */
-    public function getIdFavoris(): Collection
-    {
-        return $this->idFavoris;
-    }
 
-    public function addIdFavori(Favoris $idFavori): self
-    {
-        if (!$this->idFavoris->contains($idFavori)) {
-            $this->idFavoris->add($idFavori);
-            $idFavori->addIdArticle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeIdFavori(Favoris $idFavori): self
-    {
-        if ($this->idFavoris->removeElement($idFavori)) {
-            $idFavori->removeIdArticle($this);
-        }
-
-        return $this;
+    public function __toString(){
+        $var = strval($this->idArticle);
+        return $var;
     }
 }

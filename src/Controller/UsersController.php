@@ -2,14 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\Articles;
+use App\Entity\Commentaire;
+use App\Entity\Panier;
+use App\Entity\Rating;
+use App\Entity\Reclam;
+use App\Entity\Reponse;
 use App\Entity\Users;
 use App\Form\UsersType;
 use App\Form\UsersTypeEdit;
 use App\Form\UsersTypeEditadmin;
 use App\Repository\UsersRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
@@ -25,11 +33,15 @@ use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 class UsersController extends AbstractController
 {
 #[Route('/', name: 'app_users_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
-    {
-        $users = $entityManager
-            ->getRepository(Users::class)
-            ->findAll();
+    public function index(EntityManagerInterface $entityManager,PaginatorInterface $paginator, Request $request): Response
+    {    $donnees = $entityManager
+        ->getRepository(Users::class)
+        ->findAll();
+        $users = $paginator->paginate(
+            $donnees,// Requête contenant les données à paginer (ici les articles)
+            $request->query->getInt('page',1),// Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            3  // Nombre de résultats par page
+        );
         $userByadress = [];
         foreach ($users as $user) {
             $lieu = $user->getAdresse();
@@ -210,6 +222,7 @@ class UsersController extends AbstractController
     #[Route('/{id}/edit', name: 'app_users_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Users $user, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordencoder, FlashyNotifier $flashy): Response
     {
+        $panierUser=$entityManager->getRepository(Panier::class)->findOneBy(['idUser'=>$user]);
         $form = $this->createForm(UsersTypeEditadmin::class, $user);
         $form->handleRequest($request);
 
@@ -258,6 +271,7 @@ class UsersController extends AbstractController
         return $this->renderForm('users/edit.html.twig', [
             'user' => $user,
             'form' => $form,
+            'cart'=>$panierUser,
         ]);
     }
     //admin updates user's account
@@ -371,63 +385,28 @@ class UsersController extends AbstractController
 
 
 
-    #[Route('/gender/stats',name:'app_users_stats')]
-    public function usersBySexeChartAction(EntityManagerInterface $entityManager): Response
-    {
-        $userRepository=$entityManager->getRepository(Users::class);
-        // Get the user counts by gender from the repository
-        $maleCount = $userRepository->countByGender('Male');
-        $femaleCount = $userRepository->countByGender('Female');
-
-        // Create the chart data
-        $chartData = [
-            ['Gender', 'Count'],
-            ['Male', $maleCount],
-            ['Female', $femaleCount],
-        ];
-
-        // Create the chart object and set the data
-        $pieChart = new PieChart();
-        $pieChart->getData()->setArrayToDataTable($chartData);
-
-        // Set the chart options
-        //$pieChart->getOptions()->setTitle('User Gender Distribution');
-        $pieChart->getOptions()->setPieHole(0.4);
-        $pieChart->getOptions()->setWidth(500);
-        $pieChart->getOptions()->setHeight(400);
-////////////////////////////////////////////////////////////////////:statsByRole
-        // Get the user counts by role from the repository
-        $artistCount = $userRepository->countByRole('["ROLE_ARTIST"]');
-        $clientCount = $userRepository->countByRole('["ROLE_CLIENT"]');
-
-        // Create the chart data
-        $chartData2 = [
-            ['Role', 'Count'],
-            ['Artist', $artistCount],
-            ['Client', $clientCount],
-        ];
-
-        // Create the chart object and set the data
-        $pieChart2 = new PieChart();
-        $pieChart2->getData()->setArrayToDataTable($chartData2);
-        $pieChart2->getOptions()->setWidth(500);
-        $pieChart2->getOptions()->setHeight(400);
-        // Set the chart options
-        // $pieChart2->getOptions()->setTitle('User Role Distribution');
-
-
-
-        // Render the view with the chart
-        return $this->render('users/gender_chart.html.twig', [
-            'chart' => $pieChart,
-            'chart2'=>$pieChart2,
-        ]);
-    }
 
     #[Route('/{id}', name: 'app_users_delete', methods: ['POST'])]
     public function delete(Request $request, Users $user, EntityManagerInterface $entityManager, FlashyNotifier $flashy): Response
     {
         if ( $this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token')) ) {
+            $rates=$entityManager->getRepository(Rating::class)->findByIdUser($user);
+            $comments=$entityManager->getRepository(Commentaire::class)->findByIdUser($user);
+            $reclams=$entityManager->getRepository(Reclam::class)->findByIdUser($user);
+            foreach ($rates as $rate){
+                $entityManager->remove($rate);
+            }
+            foreach ($reclams as $reclam){
+                $reponse=$entityManager->getRepository(Reponse::class)->findByIdrec($reclam);
+                foreach ($reponse as $r){
+                    $entityManager->remove($r);
+                }
+                $entityManager->remove($reclam);
+            }
+            foreach ($comments as $comment){
+                $entityManager->remove($comment);
+            }
+
             $entityManager->remove($user);
             $entityManager->flush();
             $flashy->success('User successfully deleted', 5000);

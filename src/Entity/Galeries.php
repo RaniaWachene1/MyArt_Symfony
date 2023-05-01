@@ -45,5 +45,8 @@ class Galeries
         return $this;
     }
 
-
+    public function __toString(){
+        $var = strval($this->idGalerie);
+        return $var;
+    }
 }

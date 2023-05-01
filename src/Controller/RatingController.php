@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Articles;
 use App\Entity\Rating;
 use App\Form\RatingType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -81,4 +82,37 @@ class RatingController extends AbstractController
 
         return $this->redirectToRoute('app_rating_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+// ...
+    #[Route('/article/{articleId}', name: 'app_rating_article', methods: ['POST'])]
+    public function rateArticle(Request $request, $articleId, EntityManagerInterface $entityManager)
+    {
+        // Récupérer l'article correspondant à l'ID
+        $article = $entityManager->getRepository(Articles::class)->find($articleId);
+
+        // Récupérer l'utilisateur connecté
+        $user=$this->get('security.token_storage')->getToken()->getUser();
+
+        // Créer une nouvelle instance de l'entité Rating
+        $rating = new Rating();
+
+        // Affecter la note soumise
+        $rating->setRate($request->request->get('note'));
+        var_dump($request->request->get('note')); // vérifier la valeur de la note
+
+        // Affecter l'article associé
+        $rating->setIdArticle($article);
+
+        // Affecter l'utilisateur associé
+        $rating->setIdUser($user);
+
+        // Enregistrer l'instance de l'entité Rating dans la base de données
+        $entityManager->persist($rating);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_articles_quick_view', ['id' => $articleId]);
+    }
+
+
 }

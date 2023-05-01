@@ -93,7 +93,7 @@
 							</li>
 
 							<li>
-								<a href="product.html">Gallery</a>
+								<a href="{{ path('app_articles_indexfront') }}">Gallery</a>
 							</li>
 
 							<li >
@@ -249,6 +249,7 @@
 
 
 	<!-- Cart -->
+	{% block cart %}
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
 
@@ -332,7 +333,7 @@
 			</div>
 		</div>
 	</div>
-
+{% endblock %}
 	<!-- Slider -->
 	<section class="section-slide">
 		<div class="wrap-slick1">
