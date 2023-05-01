@@ -11070,6 +11070,9 @@
             "homepage": "https://symfony.com",
             "support": {
                 "source": "https://github.com/symfony/phpunit-bridge/tree/v6.2.10"
+=======
+                "source": "https://github.com/symfony/phpunit-bridge/tree/v6.2.7"
+>>>>>>> origin/integration
             },
             "funding": [
                 {
@@ -11085,7 +11088,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-04-18T13:46:08+00:00"
+=======
+            "time": "2023-02-16T09:57:23+00:00"
+>>>>>>> origin/integration
         },
         {
             "name": "symfony/web-profiler-bundle",
