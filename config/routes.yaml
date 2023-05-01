@@ -1,9 +1,3 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-# config/routes.yaml
-articles_pdf:
-    path: /articles/{id}/pdf
-    controller: App\Controller\ArticlesController::pdf
-
-

@@ -17,10 +17,15 @@
             </div>
             <div class="header-cart-content flex-w js-pscroll">
                 <ul class="header-cart-wrapitem w-full">
+                    {% if app.user %}
+                    {% if cart is not null %}
+                    {% if app.user.id == cart.idUser.id %}
                     {% for article in cart.idArticle %}
                         <li class="header-cart-item flex-w flex-t m-b-12">
                             <div class="header-cart-item-img">
-                                <img src="{{vich_uploader_asset(article,'fileFile') }}" alt="IMG">
+                                <a href="{{ path('app_articles_quick_view',{'id':article.idArticle}) }}">
+                                    <img src="{{vich_uploader_asset(article,'fileFile') }}" alt="IMG">
+                                </a>
                             </div>
 
                             <div class="header-cart-item-txt p-t-8">
@@ -53,6 +58,18 @@
                         </a>
                     </div>
                 </div>
+                {% endif %}
+                {% else %}
+                    <ul class="header-cart-wrapitem w-full">
+                        <li class="header-cart-item flex-w flex-t m-b-12">
+
+                            <div class="header-cart-item-txt p-t-8">
+                                <p>>Your cart is empty</p>
+                            </div>
+                        </li>
+                    </ul>
+                {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>

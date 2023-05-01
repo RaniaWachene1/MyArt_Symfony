@@ -2,51 +2,43 @@
 
 namespace App\Entity;
 
+use App\Repository\ResetPasswordRequestRepository;
 use Doctrine\ORM\Mapping as ORM;
+use SymfonyCasts\Bundle\ResetPassword\Model\ResetPasswordRequestInterface;
+use SymfonyCasts\Bundle\ResetPassword\Model\ResetPasswordRequestTrait;
 
 /**
- * ResetPasswordRequest
- *
- * @ORM\Table(name="reset_password_request", indexes={@ORM\Index(name="IDX_7CE748AA76ED395", columns={"user_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=ResetPasswordRequestRepository::class)
  */
-class ResetPasswordRequest
+class ResetPasswordRequest implements ResetPasswordRequestInterface
 {
+    use ResetPasswordRequestTrait;
+
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private ?int $id = null;
+/**
+ * @ORM\ManyToOne(targetEntity=Users::class)
+ * @ORM\JoinColumn(nullable=false,name="user_id", referencedColumnName="id_user")
+ */
+    private ?Users $user = null;
 
-    /**
-     * @var \Users
-     *
-     * @ORM\ManyToOne(targetEntity="Users")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id_user")
-     * })
-     */
-    private $user;
+    public function __construct(object $user, \DateTimeInterface $expiresAt, string $selector, string $hashedToken)
+    {
+        $this->user = $user;
+        $this->initialize($expiresAt, $selector, $hashedToken);
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUser(): ?Users
+    public function getUser(): object
     {
         return $this->user;
     }
-
-    public function setUser(?Users $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-
 }

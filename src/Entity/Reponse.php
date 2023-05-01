@@ -26,6 +26,7 @@ class Reponse
      *
      * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
+
     private $description;
 
     /**
@@ -34,6 +35,12 @@ class Reponse
      * @ORM\Column(name="objet", type="string", length=255, nullable=false)
      */
     private $objet;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=255, nullable=true)
+     */
+    private $etat;
 
     /**
      * @var \Reclam
@@ -73,6 +80,23 @@ class Reponse
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getEtat(): ?string
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @param string $etat
+     */
+    public function setEtat(string $etat): void
+    {
+        $this->etat = $etat;
+    }
+
 
     public function getIdrec(): ?Reclam
     {

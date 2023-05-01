@@ -9,11 +9,12 @@
         <div class="image-holder">
             <img src="{{ asset('assetsRegister/images/5.jpg') }}" alt="">
         </div>
-   <h3>Reset your password</h3>
+   
 
     {{ form_start(resetForm) }}
      
         <div class="form-wrapper">
+        <h3>Reset your password</h3>
         {{ form_row(resetForm.plainPassword) }}
             <i class="zmdi zmdi-lock"></i>
         </div>

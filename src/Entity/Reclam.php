@@ -4,13 +4,19 @@ namespace App\Entity;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+//use Vich\UploaderBundle\Entity\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Reclam
  *
- * @ORM\Table(name="reclam", indexes={@ORM\Index(name="fk_idtyperreclam", columns={"idtyper"}), @ORM\Index(name="fk_userreclam", columns={"id_user"})})
+ * @ORM\Table(name="reclam", indexes={@ORM\Index(name="fk_reclamtype", columns={"idtyper"}), @ORM\Index(name="id_user", columns={"id_user"})})
  * @ORM\Entity
+ *
  */
+#[Vich\Uploadable]
 class Reclam
 {
     /**
@@ -26,22 +32,48 @@ class Reclam
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255, nullable=false)
+     * @Assert\NotBlank(message="Please enter title")
      */
     private $titre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255, nullable=false)
+     * @ORM\Column(name="description", type="string", length=500, nullable=false)
+     *@Assert\NotBlank(message="Please enter description")
      */
     private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     * @ORM\Column(name="image", type="string", length=500, nullable=true)
      */
     private $image;
+    /**
+     *
+     *
+     * @var File
+     *
+     */
+    #[Vich\UploadableField(mapping: 'images' , fileNameProperty:"image")]
+    private $imageFile;
+
+    /**
+     * @return File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File $imageFile
+     */
+    public function setImageFile(File $imageFile): void
+    {
+        $this->imageFile = $imageFile;
+    }
 
     /**
      * @var \DateTime
@@ -53,29 +85,30 @@ class Reclam
     /**
      * @var string
      *
-     * @ORM\Column(name="etat", type="string", length=255, nullable=false)
+     * @ORM\Column(name="etat", type="string", length=50, nullable=false)
      */
     private $etat;
 
     /**
+     * @var \Typereclamation
+     *
+     * @ORM\ManyToOne(targetEntity="Typereclamation",cascade={"detach"})
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idtyper", referencedColumnName="idtr")
+     * })
+     * @Assert\NotBlank(message="Please choose claim's type")
+     */
+    private $idtyper;
+
+    /**
      * @var \Users
      *
-     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\ManyToOne(targetEntity="Users",cascade={"detach"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
      * })
      */
     private $idUser;
-
-    /**
-     * @var \Typereclamation
-     *
-     * @ORM\ManyToOne(targetEntity="Typereclamation")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="idtyper", referencedColumnName="idtr")
-     * })
-     */
-    private $idtyper;
 
     public function getIdr(): ?int
     {
@@ -142,18 +175,6 @@ class Reclam
         return $this;
     }
 
-    public function getIdUser(): ?Users
-    {
-        return $this->idUser;
-    }
-
-    public function setIdUser(?Users $idUser): self
-    {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
     public function getIdtyper(): ?Typereclamation
     {
         return $this->idtyper;
@@ -166,5 +187,37 @@ class Reclam
         return $this;
     }
 
+    public function getIdUser(): ?Users
+    {
+        return $this->idUser;
+    }
+
+    public function setIdUser(?Users $idUser): self
+    {
+        $this->idUser = $idUser;
+
+        return $this;
+    }
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function uploadImage()
+    {
+        if ($this->imageFile instanceof UploadedFile) {
+            $fileName = $this->imageFile->getClientOriginalName();
+            $this->imageFile->move($this->getUploadRootDir(), $fileName);
+            $this->setImage($fileName);
+        }
+    }
+
+    public function getUploadRootDir()
+    {
+        return __DIR__ . '/../../public/images';
+    }
+    public function __toString(){
+        $var = strval($this->idr);
+        return $var;
+    }
 
 }

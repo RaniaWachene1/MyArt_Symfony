@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Rating
@@ -19,12 +20,13 @@ class Rating
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idRating;
+    private $id;
 
     /**
      * @var float|null
      *
      * @ORM\Column(name="rate", type="float", precision=10, scale=0, nullable=true)
+     * @Gedmo\SortablePosition()
      */
     private $rate;
 
@@ -41,16 +43,16 @@ class Rating
     /**
      * @var \Users
      *
-     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\ManyToOne(targetEntity="Users",cascade={"detach"})
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
      * })
      */
     private $idUser;
 
-    public function getId_rating(): ?int
+    public function getId(): ?int
     {
-        return $this->id_rating;
+        return $this->id;
     }
 
     public function getRate(): ?string

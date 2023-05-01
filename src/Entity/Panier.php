@@ -43,6 +43,15 @@ class Panier
      * @ORM\ManyToMany(targetEntity="Articles", mappedBy="idPanier")
      */
     private $idArticle = array();
+    /**
+     * @var \Users
+     *
+     * @ORM\ManyToOne(targetEntity="Users",cascade={"detach"})
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
+     */
+    private $idUser;
 
     /**
      * Constructor
@@ -107,5 +116,15 @@ class Panier
 
         return $this;
     }
+    public function getIdUser(): ?Users
+    {
+        return $this->idUser;
+    }
 
+    public function setIdUser(Users $idUser): self
+    {
+        $this->idUser = $idUser;
+
+        return $this;
+    }
 }

@@ -63,6 +63,10 @@ class Typereclamation
 
         return $this;
     }
+    public function __toString(){
+        $var = strval($this->idtr);
+        return $var;
+    }
 
 
 }

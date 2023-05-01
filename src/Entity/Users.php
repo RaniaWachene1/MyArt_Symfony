@@ -2,125 +2,148 @@
 
 namespace App\Entity;
 
+use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Users
- *
- * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_1483A5E9E7927C74", columns={"email"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=UsersRepository::class)
+ * @ORM\Table(name="users")
  */
-class Users
+#[Vich\Uploadable]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class Users implements UserInterface, PasswordAuthenticatedUserInterface,\Serializable
 {
     /**
      * @var int
-     *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     *@ORM\Column(name="id_user",type="integer")
+     *@ORM\Id
+     *@ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=180, nullable=false)
-     */
-    private $email;
 
     /**
-     * @var array
-     *
-     * @ORM\Column(name="roles", type="json", nullable=false)
+     * @ORM\Column(length=180, unique=true)
+     * @Assert\NotBlank(message="Please enter your email")
+     * @Assert\Email (message="Invalid mail!")
      */
-    private $roles;
+
+    private ?string $email = null;
+    /**
+     * @ORM\Column(type="boolean",nullable=true,name="isVerified")
+     *
+     */
+    private $isVerified = false;
+    /**
+     * @ORM\Column
+     */
+    private array $roles = [];
+    private string $role;
+    /**
+     * @var string The hashed password
+     * @Assert\Regex(
+     *     pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{1,8}$/",
+     *     message="The password should contain at least one uppercase letter, numbers, lowercase letters, and special characters, and be longer than 8 characters"
+     * )
+     *  @Assert\NotBlank(message="Please enter a password")
+     * @ORM\Column(name="pwd_user")
+     */
+    private ?string $password = null;
+
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="pwd_user", type="string", length=255, nullable=false)
+     * @ORM\Column(length=255,name="nom_user")
+     * @Assert\Regex(
+     *     pattern="/^[a-zA-Z]+$/",
+     *     message="Last should contain only alphabetical letters"
+     * )
+     * @Assert\NotBlank(message="Lasttname can't be empty")
      */
-    private $pwdUser;
+    private ?string $nomUser = null;
+
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nom_user", type="string", length=255, nullable=false)
+     * @ORM\Column(length=255,name="prenom_user")
+     * @Assert\Regex(
+     *     pattern="/^[a-zA-Z]+$/",
+     *     message="Firstname should contain only alphabetical letters"
+     * )
+     * @Assert\NotBlank(message="Firstname can't be empty")
      */
-    private $nomUser;
+    private ?string $prenomUser = null;
+
 
     /**
-     * @var string
+     * @ORM\Column(name="tel_user")
+     * @Assert\Regex(
+     *     pattern="/^\d{8}$/",
+     *     message="The phone number should be exactly 8 digits"
+     * )
+     * @Assert\NotBlank(message="Please enter your phone number")
      *
-     * @ORM\Column(name="prenom_user", type="string", length=255, nullable=false)
      */
-    private $prenomUser;
+    private ?int $telUser = null;
+
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="tel_user", type="integer", nullable=false)
+     * @ORM\Column(type=Types::DATE_MUTABLE,name="date_naiss")
+     * @Assert\LessThanOrEqual("-18 years", message="You must be at least 18 years old.")
+     * @Assert\NotBlank(message="Please enter your birth date")
      */
-    private $telUser;
+    private ?\DateTimeInterface $dateNaiss = null;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_naiss", type="date", nullable=false)
+     * @ORM\Column(length=255,nullable=true)
      */
-    private $dateNaiss;
+    private ?string $img = null;
+    #[Vich\UploadableField(mapping: 'images' , fileNameProperty:"img")]
+
+    private $imageFile;
+    /**
+     * @ORM\Column(length=255)
+     * @Assert\NotBlank(message="Please enter your adress")
+     *
+     */
+    private ?string $adresse = null;
+    /**
+     * @ORM\Column(nullable=true)
+     */
+    private ?float $latitude = null;
+    /**
+     * @ORM\Column(nullable=true)
+     */
+    private ?float $longitude = null;
+
 
     /**
-     * @var string|null
+     * @ORM\Column(length=255)
+     * @Assert\NotBlank(message="Please choose your sexe")
      *
-     * @ORM\Column(name="img", type="string", length=255, nullable=true)
      */
-    private $img;
+    private ?string $sexe = null;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="adresse", type="string", length=255, nullable=false)
+     * @ORM\Column(length=255)
      */
-    private $adresse;
+    private ?string $block = 'unBlocked';
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="sexe", type="string", length=255, nullable=false)
-     */
-    private $sexe;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="block", type="string", length=255, nullable=false)
-     */
-    private $block;
 
-    /**
-     * @var float|null
-     *
-     * @ORM\Column(name="longitude", type="float", precision=10, scale=0, nullable=true)
-     */
-    private $longitude;
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
-    /**
-     * @var float|null
-     *
-     * @ORM\Column(name="latitude", type="float", precision=10, scale=0, nullable=true)
-     */
-    private $latitude;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="blockedAt", type="date", nullable=true)
-     */
-    private $blockedat;
-
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
@@ -136,10 +159,45 @@ class Users
 
         return $this;
     }
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
 
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
     public function getRoles(): array
     {
-        return $this->roles;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
     public function setRoles(array $roles): self
@@ -149,16 +207,55 @@ class Users
         return $this;
     }
 
-    public function getPwdUser(): ?string
+    /**
+     * @return string
+     */
+    public function getRole(): string
     {
-        return $this->pwdUser;
+        return $this->role;
     }
 
-    public function setPwdUser(string $pwdUser): self
+    /**
+     * @param string $role
+     */
+    public function setRole(string $role): void
     {
-        $this->pwdUser = $pwdUser;
+        $this->role = $role;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getNomUser(): ?string
@@ -214,13 +311,27 @@ class Users
         return $this->img;
     }
 
-    public function setImg(?string $img): self
+    public function setImg(string $img): self
     {
         $this->img = $img;
 
         return $this;
     }
+    /**
+     * @return File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
 
+    /**
+     * @param File $imageFile
+     */
+    public function setImageFile(File $imageFile): void
+    {
+        $this->imageFile = $imageFile;
+    }
     public function getAdresse(): ?string
     {
         return $this->adresse;
@@ -231,6 +342,38 @@ class Users
         $this->adresse = $adresse;
 
         return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @param float|null $latitude
+     */
+    public function setLatitude(?float $latitude): void
+    {
+        $this->latitude = $latitude;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    /**
+     * @param float|null $longitude
+     */
+    public function setLongitude(?float $longitude): void
+    {
+        $this->longitude = $longitude;
     }
 
     public function getSexe(): ?string
@@ -257,42 +400,68 @@ class Users
         return $this;
     }
 
-    public function getLongitude(): ?float
+    /**
+     * @return Collection<int, Articles>
+     */
+    public function getArticles(): Collection
     {
-        return $this->longitude;
+        return $this->articles;
     }
 
-    public function setLongitude(?float $longitude): self
+    public function addArticle(Articles $article): self
     {
-        $this->longitude = $longitude;
+        if (!$this->articles->contains($article)) {
+            $this->articles->add($article);
+            $article->setUser($this);
+        }
 
         return $this;
     }
 
-    public function getLatitude(): ?float
+    public function removeArticle(Articles $article): self
     {
-        return $this->latitude;
-    }
-
-    public function setLatitude(?float $latitude): self
-    {
-        $this->latitude = $latitude;
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getUser() === $this) {
+                $article->setUser(null);
+            }
+        }
 
         return $this;
     }
+    public function serialize()
+    {return serialize(array(
+        $this->id,
+        $this->nomUser,
+        $this->prenomUser,
+        $this->dateNaiss,
+        $this->email,
+        $this->adresse,
+        $this->telUser,
+        $this->sexe,
+        $this->roles,
+        $this->block,
+        $this->password,));
 
-    public function getBlockedat(): ?\DateTimeInterface
-    {
-        return $this->blockedat;
+
     }
 
-    public function setBlockedat(?\DateTimeInterface $blockedat): self
+    public function unserialize($serialized)
     {
-        $this->blockedat = $blockedat;
-
-        return $this;
+        list(
+            $this->id,
+            $this->nomUser,
+            $this->prenomUser,
+            $this->dateNaiss,
+            $this->email,
+            $this->adresse,
+            $this->telUser,
+            $this->sexe,
+            $this->roles,
+            $this->block,
+            $this->password,
+            ) = unserialize($serialized);
     }
-
     public function __toString(){
         $var = strval($this->id);
         return $var;

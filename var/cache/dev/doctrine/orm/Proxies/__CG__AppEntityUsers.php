@@ -67,10 +67,10 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'pwdUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'nomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'prenomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'telUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'img', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'block', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'blockedat'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'role', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'nomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'prenomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'telUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'img', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'block'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'pwdUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'nomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'prenomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'telUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'img', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'block', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'blockedat'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'isVerified', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'role', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'nomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'prenomUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'telUser', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'img', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'adresse', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Users' . "\0" . 'block'];
     }
 
     /**
@@ -180,7 +180,7 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getId(): ?int
+    public function getId()
     {
         if ($this->__isInitialized__ === false) {
             return (int)  parent::getId();
@@ -217,6 +217,50 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
+    public function isVerified(): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isVerified', []);
+
+        return parent::isVerified();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIsVerified(bool $isVerified): \App\Entity\Users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIsVerified', [$isVerified]);
+
+        return parent::setIsVerified($isVerified);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUserIdentifier(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUserIdentifier', []);
+
+        return parent::getUserIdentifier();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUsername(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsername', []);
+
+        return parent::getUsername();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getRoles(): array
     {
 
@@ -239,23 +283,67 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getPwdUser(): ?string
+    public function getRole(): string
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPwdUser', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRole', []);
 
-        return parent::getPwdUser();
+        return parent::getRole();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setPwdUser(string $pwdUser): \App\Entity\Users
+    public function setRole(string $role): void
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPwdUser', [$pwdUser]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRole', [$role]);
 
-        return parent::setPwdUser($pwdUser);
+        parent::setRole($role);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPassword(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPassword', []);
+
+        return parent::getPassword();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPassword(string $password): \App\Entity\Users
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPassword', [$password]);
+
+        return parent::setPassword($password);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSalt(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalt', []);
+
+        return parent::getSalt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function eraseCredentials()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
+
+        return parent::eraseCredentials();
     }
 
     /**
@@ -360,12 +448,34 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setImg(?string $img): \App\Entity\Users
+    public function setImg(string $img): \App\Entity\Users
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImg', [$img]);
 
         return parent::setImg($img);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageFile(): ?\Symfony\Component\HttpFoundation\File\File
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageFile', []);
+
+        return parent::getImageFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImageFile(\Symfony\Component\HttpFoundation\File\File $imageFile): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageFile', [$imageFile]);
+
+        parent::setImageFile($imageFile);
     }
 
     /**
@@ -388,6 +498,50 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAdresse', [$adresse]);
 
         return parent::setAdresse($adresse);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLatitude(): ?float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLatitude', []);
+
+        return parent::getLatitude();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLatitude(?float $latitude): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLatitude', [$latitude]);
+
+        parent::setLatitude($latitude);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLongitude(): ?float
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLongitude', []);
+
+        return parent::getLongitude();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLongitude(?float $longitude): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLongitude', [$longitude]);
+
+        parent::setLongitude($longitude);
     }
 
     /**
@@ -437,67 +591,56 @@ class Users extends \App\Entity\Users implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getLongitude(): ?float
+    public function getArticles(): \Doctrine\Common\Collections\Collection
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLongitude', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getArticles', []);
 
-        return parent::getLongitude();
+        return parent::getArticles();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setLongitude(?float $longitude): \App\Entity\Users
+    public function addArticle(\App\Entity\Articles $article): \App\Entity\Users
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLongitude', [$longitude]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addArticle', [$article]);
 
-        return parent::setLongitude($longitude);
+        return parent::addArticle($article);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getLatitude(): ?float
+    public function removeArticle(\App\Entity\Articles $article): \App\Entity\Users
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLatitude', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeArticle', [$article]);
 
-        return parent::getLatitude();
+        return parent::removeArticle($article);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setLatitude(?float $latitude): \App\Entity\Users
+    public function serialize()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLatitude', [$latitude]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'serialize', []);
 
-        return parent::setLatitude($latitude);
+        return parent::serialize();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBlockedat(): ?\DateTimeInterface
+    public function unserialize($serialized)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBlockedat', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'unserialize', [$serialized]);
 
-        return parent::getBlockedat();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBlockedat(?\DateTimeInterface $blockedat): \App\Entity\Users
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBlockedat', [$blockedat]);
-
-        return parent::setBlockedat($blockedat);
+        return parent::unserialize($serialized);
     }
 
     /**

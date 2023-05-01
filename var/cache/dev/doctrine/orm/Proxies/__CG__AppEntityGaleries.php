@@ -214,4 +214,15 @@ class Galeries extends \App\Entity\Galeries implements \Doctrine\ORM\Proxy\Proxy
         return parent::setTitreGalerie($titreGalerie);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString(): string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
+
+        return parent::__toString();
+    }
+
 }

@@ -46,7 +46,7 @@
              
                 <td>
                     
-                <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_show', {'idArticle': article.idArticle}) }}'">Show</button>
+                <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_showadmin', {'idArticle': article.idArticle}) }}'">Show</button>
 
                 </td>
             </tr>
@@ -58,6 +58,11 @@
         </tbody>
     </table>
 
+                <div class="text-center">
+
+                    {{ knp_pagination_render(articles) }}
+
+                </div>
        </div>
 </div>
 </div>

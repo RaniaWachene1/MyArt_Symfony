@@ -7,6 +7,7 @@ use App\Entity\Articles;
 use App\Form\GaleriesType;
 use App\Form\DeleteType;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,12 +17,16 @@ use MercurySeries\FlashyBundle\FlashyNotifier;
 class GaleriesController extends AbstractController
 {
     #[Route('/', name: 'app_galeries_index', methods: ['GET'])]
-    public function index(EntityManagerInterface $entityManager): Response
+    public function index(EntityManagerInterface $entityManager,PaginatorInterface $paginator,Request $request): Response
     {
-        $galeries = $entityManager
+        $donnees = $entityManager
             ->getRepository(Galeries::class)
             ->findAll();
-
+        $galeries=$paginator->paginate(
+            $donnees,// Requête contenant les données à paginer (ici les articles)
+            $request->query->getInt('page',1),// Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            6  // Nombre de résultats par page
+        );
         return $this->render('galeries/index.html.twig', [
             'galeries' => $galeries,
         ]);

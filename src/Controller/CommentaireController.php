@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Articles;
 use App\Entity\Commentaire;
 use App\Entity\Users;
 use App\Form\CommentaireType;
@@ -30,7 +31,7 @@ class CommentaireController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $commentaire = new Commentaire();
-        $user=$entityManager->getRepository(Users::class)->find(2);
+        $user=$this->get('security.token_storage')->getToken()->getUser();
         $commentaire->setIdUser($user);
         $form = $this->createForm(CommentaireType::class, $commentaire);
         $form->handleRequest($request);
@@ -62,6 +63,19 @@ class CommentaireController extends AbstractController
             'commentaire' => $commentaire,
         ]);
     }
+
+
+    #[Route('/{id}', name: 'app_commentaire_delete', methods: ['POST','GET','DELETE'])]
+    public function delete(Request $request, Commentaire $commentaire, EntityManagerInterface $entityManager): Response
+    { // $article=$entityManager->getRepository(Articles::class)->find($ida);
+        if ($this->isCsrfTokenValid('delete'.$commentaire->getId(), $request->request->get('_token'))) {
+            $entityManager->remove($commentaire);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('app_articles_quick_view', ['id'=>$commentaire->getIdArticle()->getIdArticle()], Response::HTTP_SEE_OTHER);
+    }
+
     #[Route('/{id}/edit', name: 'app_commentaire_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Commentaire $commentaire, EntityManagerInterface $entityManager): Response
     {
@@ -78,16 +92,5 @@ class CommentaireController extends AbstractController
             'commentaire' => $commentaire,
             'form' => $form,
         ]);
-    }
-
-    #[Route('/{id}', name: 'app_commentaire_delete', methods: ['POST'])]
-    public function delete(Request $request, Commentaire $commentaire, EntityManagerInterface $entityManager): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$commentaire->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($commentaire);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('app_commentaire_index', [], Response::HTTP_SEE_OTHER);
     }
 }

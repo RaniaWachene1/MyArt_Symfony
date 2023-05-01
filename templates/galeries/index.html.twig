@@ -40,8 +40,13 @@
                                    <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_new') }}'"> <i class="bi bi-plus"></i>Create new Gallery</button>
 
                 </div>
-    
 
+
+                <div class="text-center">
+
+                    {{ knp_pagination_render(galeries) }}
+
+                </div>
 </div>
 </div>
 </div>

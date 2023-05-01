@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use MercurySeries\FlashyBundle\FlashyNotifier;
 #[Route('/panier')]
 class PanierController extends AbstractController
 {
@@ -26,7 +26,7 @@ class PanierController extends AbstractController
     }
 
     #[Route('/new', name: 'app_panier_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager,FlashyNotifier $flashy): Response
     {
         $panier = new Panier();
         $form = $this->createForm(PanierType::class, $panier);
@@ -35,7 +35,7 @@ class PanierController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($panier);
             $entityManager->flush();
-
+            $flashy->error('add');
             return $this->redirectToRoute('app_panier_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -72,11 +72,12 @@ class PanierController extends AbstractController
     }
 
     #[Route('/{idPanier}', name: 'app_panier_delete', methods: ['POST'])]
-    public function delete(Request $request, Panier $panier, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Panier $panier, EntityManagerInterface $entityManager,FlashyNotifier $flashy): Response
     {
         if ($this->isCsrfTokenValid('delete'.$panier->getIdPanier(), $request->request->get('_token'))) {
             $entityManager->remove($panier);
             $entityManager->flush();
+            $flashy->error('deleted');
         }
 
         return $this->redirectToRoute('app_panier_index', [], Response::HTTP_SEE_OTHER);

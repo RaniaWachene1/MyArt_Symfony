@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+
+
     <title>{% block title %}MyArt{% endblock %}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -52,48 +54,105 @@
     {% endblock %}
 </head>
 <body>
-    <div style=" justify-content: center; margin-left: 150px;">
+    <div style=" justify-content: center">
 
-        <div class="card">
-            <div  style="display: flex;align-items: center;justify-content: center;margin-top: 20px; padding: 50px;">
+       <style>
+    * {
+        font-family: Arial, sans-serif;
+    }
 
-                <div class="card-body">
-                    <center> <h1 class="card-title" >Cart</h1> </center>
+    .card {
+        margin: 0 auto;
+        max-width: 1000px;
+        border: 2px solid black;
+        padding: 10px;
+    }
 
-                    <table class="table" border="1">
-                        <tbody>
-                        <tr>
-                            <th>Articles</th>
-                        </tr>
-                        <tr>
-                            <th>Title</th>
-                            <th>Artist Name</th>
-                            <th>Price</th>
-                        </tr>
-                        {% for article in panier.idArticle %}
-                            <tr>
-                                <td>{{ article.titreArticle }}</td>
-                                <td>{{ article.nomArtiste }}</td>
-                                <td>{{ article.prixArticle }} TND</td>
-                            </tr>
+    h1 {
+        text-align: center;
+        font-size: 32px;
+        margin-top: 10px;
+    }
 
-                        {% endfor %}
-                        <tr>
-                            <th>Cart Total</th>
-                            <th>Quantity</th>
-                        </tr>
-                            <tr>
-                                <td>{{ panier.total }} TND</td>
-                                <td>{{ panier.quantite }} Articles</td>
-                            </tr>
+    table {
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
 
+    th {
+        background-color: #245393;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
 
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
 
-                        </tbody>
-                    </table>
+    .total {
+        text-align: right;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-                </div>
-            </div>
-        </div>
+    .quantity {
+        text-align: right;
+        font-size: 18px;
+    }
+   
+    h1, h3, h4 {
+        text-align: center;
+        color: #245393;
+    }
+
+ h2 {
+        text-align: center;
+       
+    }
+</style>
+
+<div class="card" style="display: flex; align-items: center; justify-content: center; margin-top: 20px;">
+<br>
+
+<h1>Order Successfully Placed </h1>
+<h3>Thank you for ordering on MyArt!</h3>
+<h4>You will receive a confirmation SMS shortly.</h4>
+ <br>
+ <br>
+ <br>
+        <h2>INVOICE</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Artist Name</th>
+                    <th>Price (TND)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for article in panier.idArticle %}
+                <tr>
+                    <td>{{ article.titreArticle }}</td>
+                    <td>{{ article.nomArtiste }}</td>
+                    <td>{{ article.prixArticle }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td class="total" colspan="2">Total:</td>
+                    <td class="total">{{ panier.total }}</td>
+                </tr>
+                <tr>
+                <td class="total" colspan="2">Quantity:</td>
+                    <td class="quantity" colspan="3">{{ panier.quantite }} articles</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+
 </body>

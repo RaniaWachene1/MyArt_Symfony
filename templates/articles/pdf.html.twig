@@ -49,12 +49,57 @@
 
         <!-- Template Main JS File -->
         <script src="{{asset('assets/js/main.js')}}"></script>
+        
     {% endblock %}
 </head>
 <body>
-    <div style=" justify-content: center; margin-left: 150px;">
+<div style=" justify-content: center">
+    <style>
+        .card-body {
+          margin: 10px;
+          padding: 10px;
+        }
 
-        <div class="card">
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          border: 1px solid #ccc;
+        }
+
+        th, td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid #ccc;
+        }
+
+        th {
+          background-color: #f2f2f2;
+          font-weight: bold;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+
+        /* center the table */
+        table {
+          margin: 0 auto;
+        }
+
+        /* center the card title */
+        .card-title {
+          text-align: center;
+        }
+   
+ </div>
+
+</style>
+    <div style=" justify-content: center;">
+
+      <div class="card" style="display: flex; align-items: center; justify-content: center; margin-top: 20px;">
             <div  style="display: flex;align-items: center;justify-content: center;margin-top: 20px; padding: 50px;">
 
                 <div class="card-body">

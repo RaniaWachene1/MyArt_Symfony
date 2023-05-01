@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'artist.html.twig' %}
 {% block tableForm %}
     <div style="display: flex; justify-content: center; margin-left: 170px; ">
         
@@ -58,19 +58,26 @@
     </table>
     <div class="text-center" style="  margin-top: 50px;">
 <button class="btn btn-primary"  onclick="window.location.href='{{ path('app_articles_new') }}'"> <i class="bi bi-plus"></i>Create new Article </button>
+   
 
+
+   
        </div>
-    
+                <div class="text-center">
+
+                    {{ knp_pagination_render(articles) }}
+
+                </div>
        </div>
 </div>
 </div>
 </div>
 
-
-<div  style="  margin-top: 10px;">
+{# <div  style="  margin-top: 10px;">
 <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_index') }}'">Admin view</button>
 </div>
 <div  style="  margin-top: 10px;">
 <button class="btn btn-primary"  onclick="window.location.href='{{ path('app_articles_indexfront') }}'">Client view </button>
-</div>
+</div> #}
+
 {% endblock %}
