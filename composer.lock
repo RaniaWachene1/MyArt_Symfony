@@ -2456,6 +2456,7 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
+<<<<<<< HEAD
             "version": "1.20.3",
             "source": {
                 "type": "git",
@@ -2466,6 +2467,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/6c04009f6cae6eda2f040745b6b846080ef069c2",
                 "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2",
+=======
                 "shasum": ""
             },
             "require": {
