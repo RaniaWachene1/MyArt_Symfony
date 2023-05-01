@@ -8,6 +8,10 @@
     right: 20px;
     font-size: 16px;
     color: #fff;
+<<<<<<< HEAD
+=======
+    z-index: 999;
+>>>>>>> origin/integration
 }
 
 .flashy--success {
