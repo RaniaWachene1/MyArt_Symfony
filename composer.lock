@@ -8375,7 +8375,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-04-21T08:33:05+00:00"
+=======
+            "time": "2023-03-14T15:48:45+00:00"
+>>>>>>> origin/integration
         },
         {
             "name": "symfony/web-link",
@@ -8476,6 +8480,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/4cd2e3ea301aadd76a4172756296fe552fb45b0b",
                 "reference": "4cd2e3ea301aadd76a4172756296fe552fb45b0b",
+=======
+            "version": "v5.4.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "3713e20d93e46e681e51605d213027e48dab3469"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3713e20d93e46e681e51605d213027e48dab3469",
+                "reference": "3713e20d93e46e681e51605d213027e48dab3469",
+>>>>>>> origin/integration
                 "shasum": ""
             },
             "require": {
@@ -10848,6 +10864,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/4a286c916b74ecfb6e2caf1aa31d3fe2a34b7e08",
                 "reference": "4a286c916b74ecfb6e2caf1aa31d3fe2a34b7e08",
+=======
+            "version": "v5.4.22",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "4c633facee8da59998e0c90e337a586cf07a21e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/4c633facee8da59998e0c90e337a586cf07a21e7",
+                "reference": "4c633facee8da59998e0c90e337a586cf07a21e7",
+>>>>>>> origin/integration
                 "shasum": ""
             },
             "require": {
@@ -10893,7 +10921,11 @@
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/dom-crawler/tree/v5.4.23"
+=======
+                "source": "https://github.com/symfony/dom-crawler/tree/v5.4.22"
+>>>>>>> origin/integration
             },
             "funding": [
                 {
@@ -10909,7 +10941,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-04-08T21:20:19+00:00"
+=======
+            "time": "2023-03-06T21:29:33+00:00"
+>>>>>>> origin/integration
         },
         {
             "name": "symfony/maker-bundle",
