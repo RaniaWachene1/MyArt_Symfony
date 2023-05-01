@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block tableForm %}
+<div style=" justify-content: center; margin-left: 150px;">
+        
+          <div class="card">
+          <div  style="display: flex;align-items: center;justify-content: center;margin-top: 15px; padding: 10px;">
+
+            <div class="card-body">
+             <center> <h1 class="card-title" >List of Galleries </h1> </center>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id Gallery</th>
+                <th>Title</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for galery in galeries %}
+            <tr>
+                <td>{{ galery.idGalerie }}</td>
+                <td>{{ galery.titreGalerie }}</td>
+                <td>
+                <button class="btn btn-info btn-sm  " style="  margin-left: 60px;" onclick="window.location.href='{{ path('app_galeries_show', {'idGalerie': galery.idGalerie}) }}'">Show <i class="bi bi-eye"></i></button>
+
+                    <button class="btn btn-info btn-sm  " style="  margin-left: 30px;" onclick="window.location.href='{{ path('app_galeries_edit', {'idGalerie': galery.idGalerie}) }}'">Edit <i class="bi bi-pencil-square"></i></button>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="text-center" style="  margin-top: 50px;">
+               
+                                   <button class="btn btn-primary" onclick="window.location.href='{{ path('app_galeries_new') }}'"> <i class="bi bi-plus"></i>Create new Gallery</button>
+
+                </div>
+
+
+                <div class="text-center">
+
+                    {{ knp_pagination_render(galeries) }}
+
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div  style="  margin-top: 10px;">
+<button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_index') }}'">Artist view</button>
+</div>
+<div  style="  margin-top: 10px;">
+<button class="btn btn-primary"  onclick="window.location.href='{{ path('app_articles_indexfront') }}'">Client view </button>
+</div>
+{% endblock %}

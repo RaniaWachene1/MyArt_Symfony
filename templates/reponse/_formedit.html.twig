@@ -1,0 +1,25 @@
+
+<div class="col-lg-6">
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Edit response</h5>
+            {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
+            <div class="col-12">
+                <label for="inpu    tNanme4" class="form-label"></label>
+                {{ form_row(form.objet)}}
+            </div>
+            <div class="col-12">
+                <label for="inputNanme4" class="form-label"></label>
+                {{ form_row(form.description)}}
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Send</button>
+
+            </div>
+
+            <button class="btn btn-primary" onclick="window.location.href='{{ path('app_reclam_index' ) }}'">Back to list</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
