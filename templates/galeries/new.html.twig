@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Galeries{% endblock %}
+
+
+    
+{% block tableForm %}
+
+    {{ include('galeries/_form.html.twig') }}
+<div  style="  margin-top: 10px;">
+      <button class="btn btn-info btn-sm" onclick="window.location.href='{{ path('app_galeries_index') }}'"> <i class="bi bi-arrow-bar-left"></i> Back to List  </button>
+</div>
+{% endblock %}
+

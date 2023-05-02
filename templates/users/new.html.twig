@@ -1,0 +1,17 @@
+{% extends 'register.html.twig' %}
+
+{% block title %}New Users{% endblock %}
+{% block formregister %}
+	<div class="wrapper" style="background-image: url('{{asset('assetsRegister/images/9.png')}}');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="{{asset('assetsRegister/images/11.jpg')}}" height="650" width="600" alt="">
+				</div>
+		  {{ include('users/_form.html.twig') }}
+          		</div>
+		</div>
+    <a href="{{ path('app_users_index') }}">back to list</a>
+				
+
+    
+{% endblock %}

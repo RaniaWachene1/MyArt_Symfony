@@ -1,0 +1,35 @@
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+<h1 class="mtext-105 cl2 txt-center p-b-30">My account</h1>
+<div class="bor8 m-b-30">
+{{ form_row(form.imageFile)}}
+</div>
+
+<div class="bor8 m-b-30">
+    {{ form_row(form.prenomUser) }}
+    
+</div>
+<div class="bor8 m-b-30">
+ {{ form_row(form.nomUser) }}
+</div>
+<div class="bor8 m-b-30">
+{{ form_row(form.dateNaiss) }}
+</div>
+<div class="bor8 m-b-30">
+{{ form_row(form.telUser) }}
+</div>
+<div class="bor8 m-b-30">
+{{ form_row(form.sexe) }}
+
+</div>
+<div class="bor8 m-b-30">
+{{ form_row(form.adresse) }}
+</div>
+<div class="bor8 m-b-30">
+{{ form_row(form.email) }}
+<i class="zmdi zmdi-email"></i>
+</div>
+<div class="bor8 m-b-30">
+{{ form_row(form.password) }}
+</div>
+<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">{{ button_label|default('Update') }}</button>				
+{{ form_end(form) }}

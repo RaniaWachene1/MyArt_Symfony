@@ -1,0 +1,28 @@
+{% extends 'baselogin.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+{% block login %}
+<div class="wrapper" style="background-image: url('{{ asset('assetsRegister/images/9.png') }}');">
+
+    <div class="inner">
+    
+        <div class="image-holder">
+            <img src="{{ asset('assetsRegister/images/5.jpg') }}" alt="">
+        </div>
+   
+
+    {{ form_start(resetForm) }}
+     
+        <div class="form-wrapper">
+        <h3>Reset your password</h3>
+        {{ form_row(resetForm.plainPassword) }}
+            <i class="zmdi zmdi-lock"></i>
+        </div>
+        <button type="submit">
+            Reset password
+            <i class="zmdi zmdi-arrow-right"></i>
+        </button>
+    {{ form_end(resetForm) }}
+    </div>
+</div>
+{% endblock %}
