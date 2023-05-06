@@ -13,13 +13,13 @@
 
             <div class="card-body">
              <center> <h1 class="card-title" >Affect articles to new gallery</h1> </center>
-
+             <h6>Please select the galleries that you want the articles to be moved to after deleting the current gallery</h6>
   {{ form_start(form) }}
 <div class="col-12">
     <label for="inputNanme4" class="form-label"></label>
     {{ form_row(form.articles)}}
     </div>
-   
+   <h6 style="color: red;">Warning: All articles will be deleted if you do not select another gallery.</h6>
     <div class="text-center" style="  margin-top: 50px;">
                   <button type="submit" class="btn btn-primary">Affect</button>
                 </div>

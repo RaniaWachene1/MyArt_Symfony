@@ -8,6 +8,7 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/article' => [[['_route' => 'app_article', '_controller' => 'App\\Controller\\ArticleController::index'], null, null, null, false, false, null]],
         '/articles' => [[['_route' => 'app_articles_index', '_controller' => 'App\\Controller\\ArticlesController::index'], null, ['GET' => 0], null, true, false, null]],
         '/articles/indexadmin' => [[['_route' => 'app_articles_indexadmin', '_controller' => 'App\\Controller\\ArticlesController::indexadmin'], null, ['GET' => 0], null, false, false, null]],
         '/articles/indexfront' => [[['_route' => 'app_articles_indexfront', '_controller' => 'App\\Controller\\ArticlesController::indexFront'], null, ['GET' => 0], null, false, false, null]],

@@ -113,6 +113,7 @@ class StatsController extends AbstractController
 
         ]);
 
-    }+
-
+    }
+    
+    
 }

@@ -108,7 +108,7 @@ class ArticlesController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $censor = new CensorWords;
-            $langs = array('fr', 'it', 'en-us', 'en-uk', 'de', 'es','tn');
+            $langs = array('fr', 'it', 'en-us', 'en-uk', 'de', 'es');
             $badwords = $censor->setDictionary($langs);
             $censor->setReplaceChar("*");
             $string = $censor->censorString($commentaire->getContenu());
@@ -190,7 +190,7 @@ class ArticlesController extends AbstractController
             $nb++;
             $article->setNbcomment($nb);
             $censor = new CensorWords;
-            $langs = array('fr', 'it', 'en-us', 'en-uk', 'de', 'es','tn');
+            $langs = array('fr', 'it', 'en-us', 'en-uk', 'de', 'es');
             $badwords = $censor->setDictionary($langs);
             $censor->setReplaceChar("*");
             $string = $censor->censorString($commentaire->getContenu());
