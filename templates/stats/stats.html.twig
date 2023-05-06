@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block stats %}
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-6" >
+                <div class="card" >
+
+                    <div class="card-body">
+                        <h5 class="card-title">User Gender Distribution</h5>
+
+                        <!-- Pie Chart -->
+                        <div id="gender_chart"></div>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                            {{ gc_draw(chart, 'gender_chart') }}
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6" >
+                <div class="card" >
+
+                    <div class="card-body">
+                        <h5 class="card-title">User Role Distribution</h5>
+
+                        <!-- Pie Chart -->
+                        <div id="role_chart"></div>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                            {{ gc_draw(chart2, 'role_chart') }}
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6" >
+                <div class="card" >
+
+                    <div class="card-body">
+                        <h5 class="card-title">Claims By Type</h5>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <canvas id="chart" width="500" height="400"></canvas>
+                        <script>
+                            var data = {{ data|raw }};
+                            var labels = [];
+                            var values = [];
+
+                            data.forEach(function(item) {
+                                labels.push(item.type);
+                                values.push(item.count);
+                            });
+
+                            var ctx = document.getElementById('chart').getContext('2d');
+                            var chart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: labels,
+                                    datasets: [{
+                                        label:'Claims',
+                                        data: values,
+                                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-6" >
+                <div class="card" >
+
+                    <div class="card-body">
+                        <h5 class="card-title">Comments By Article</h5>
+                        <canvas id="comments-chart" width="500" height="400"></canvas>
+                        <script>
+                            var ctx = document.getElementById('comments-chart').getContext('2d');
+                            var chart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: {{ articleCount|raw }},
+                                    datasets: [{
+                                        label: 'Comment number',
+                                        data:{{ nbcomment|raw }},
+                                        backgroundColor: 'rgba(54, 162, 235,0.55)',
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                            console.log(document.getElementById("comments-chart"))
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+{% endblock %}

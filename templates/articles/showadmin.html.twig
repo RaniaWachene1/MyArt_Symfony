@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block tableForm %}
+   <div style=" justify-content: center; margin-left: 150px;">
+        
+          <div class="card">
+          <div  style="display: flex;align-items: center;justify-content: center;margin-top: 15px; padding: 10px;">
+              <div class="card-body">
+              <a href="{{ path('app_articles_pdf',{'id':article.idArticle}) }}"><img src="{{ asset('images/pdf.png') }}" width="50" height="50"></a>
+             <center> <h1 class="card-title" >Article</h1> </center>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id Article</th>
+                <td>{{ article.idArticle }}</td>
+            </tr>
+            <tr>
+                <th>Title Article</th>
+                <td>{{ article.titreArticle }}</td>
+            </tr>
+            <tr>
+                <th>Name of Artist</th>
+                <td>{{ article.nomArtiste }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ article.prixArticle }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ article.descArticle }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ article.quantiteArticle }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                            <td>
+                      {% if article.photoArticle|lower matches '/(pdf)$/' %}
+                        <object data="{{ vich_uploader_asset(article, 'fileFile') }}" type="application/pdf" width="200" height="200">
+                            <p>Your web browser doesn't have a PDF plugin. Instead you can <a href="{{ vich_uploader_asset(article, 'fileFile') }}">click here to download the PDF file.</a></p>
+                        </object>
+                    {% elseif article.photoArticle|lower matches '/(mp4|webm|ogv)$/' %}
+                        <video controls width="200" height="200">
+                            <source src="{{ vich_uploader_asset(article, 'fileFile') }}" type="video/{{ article.photoArticle|lower|split('.')|last }}">
+                            Your browser does not support the video tag.
+                        </video>
+                   {% else %}
+                    <img src="{{vich_uploader_asset(article,'fileFile') }}" width="200" height="200">
+                    {% endif %}
+                    </td>
+            </tr>
+            <tr>
+                <th scope="col">Comments</th>
+            <tr>
+                <th>Content</th>
+                <th>User</th>
+            </tr>
+            {% for comment in comments %}
+                <tr>
+                    <td>{{ comment.contenu}}</td>
+                    <td>{{ comment.idUser.prenomUser }} {{ comment.idUser.nomUser }}</td>
+                </tr>
+
+            {% endfor %}
+            </tr>
+
+        </tbody>
+    </table>
+
+ <button class="btn btn-primary" onclick="window.location.href='{{ path('app_articles_edit', {'idArticle': article.idArticle}) }}'">Edit</button>
+  
+
+
+    {{ include('articles/_delete_form.html.twig') }}
+    </div>
+</div>
+</div>
+</div>
+<div  style="  margin-top: 10px;">
+<button class="btn btn-info btn-sm " onclick="window.location.href='{{ path('app_articles_index') }}'"> <i class="bi bi-arrow-bar-left"></i> Back to List </button>
+</div>
+{% endblock %}

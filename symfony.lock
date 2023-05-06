@@ -1,4 +1,7 @@
 {
+    "cmen/google-charts-bundle": {
+        "version": "5.0.1"
+    },
     "doctrine/annotations": {
         "version": "2.0",
         "recipe": {
@@ -38,6 +41,9 @@
             "./migrations/.gitignore"
         ]
     },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.9.0"
+    },
     "mercuryseries/flashy-bundle": {
         "version": "v5.1.0"
     },
@@ -66,6 +72,15 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.7",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.2",
+            "ref": "e805aba9eff5372e2d149a9ff56566769e22819d"
+        }
     },
     "symfony/console": {
         "version": "5.4",
@@ -290,6 +305,21 @@
         "files": [
             "./config/packages/messenger.yaml"
         ]
+    },
+    "symfonycasts/reset-password-bundle": {
+        "version": "1.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "97c1627c0384534997ae1047b93be517ca16de43"
+        },
+        "files": [
+            "./config/packages/reset_password.yaml"
+        ]
+    },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.13.0"
     },
     "twig/extra-bundle": {
         "version": "v3.5.1"

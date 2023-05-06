@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block tableForm %}
+    <h1>Supprimer la galerie</h1>
+
+    {{ form_start(deleteForm) }}
+        {{ form_errors(deleteForm) }}
+
+        <div class="form-group">
+            <label for="{{ deleteForm.confirmation.vars.id }}">{{ deleteForm.confirmation.vars.label }}</label>
+            {{ form_widget(deleteForm.confirmation) }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ deleteForm.galerie.vars.id }}">{{ deleteForm.galerie.vars.label }}</label>
+            {{ form_widget(deleteForm.galerie) }}
+        </div>
+
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        <a href="{{ path('galerie_index') }}" class="btn btn-secondary">Annuler</a>
+    {{ form_end(deleteForm) }}
+{% endblock %}

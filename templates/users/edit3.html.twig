@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+{% block tableForm %}
+<div style=" justify-content: center; margin-left: 150px;">
+        
+          <div class="card">
+          <div  style="display: flex;align-items: center;justify-content: center;margin-top: 15px; padding: 10px;">
+
+            <div class="card-body">
+             <center> <h1 class="card-title" >Update user account</h1> </center>
+
+  {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+<div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.imageFile)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.prenomUser)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.nomUser)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.dateNaiss)}}
+    </div>
+   <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.telUser)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.sexe)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.adresse)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.email)}}
+    </div>
+    <div class="col-12">
+    <label for="inputNanme4" class="form-label"></label>
+    {{ form_row(form.password)}}
+    </div>
+    <div class="text-center" style="  margin-top: 50px;">
+                  <button type="submit" class="btn btn-primary">Update</button>
+               
+                </div>
+    {{ form_end(form) }}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
