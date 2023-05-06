@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="790be34d-d846-4394-8f42-0e9ddfa82616" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/Pidevsymfo/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="ProjectId" id="2OjnhdWHuXzIKiBL9jVkzCOME3j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/stats" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\miral\OneDrive\Bureau\Pidevsymfo\public\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\miral\OneDrive\Bureau\Pidevsymfo\templates\stats" />
+      <recent name="C:\Users\miral\OneDrive\Bureau\Pidevsymfo\templates\articles" />
+      <recent name="C:\Users\miral\OneDrive\Bureau\Pidevsymfo\public\images" />
+      <recent name="C:\Users\miral\OneDrive\Bureau\Pidevsymfo\config\packages" />
+      <recent name="C:\Users\miral\OneDrive\Bureau\Pidevsymfo\templates\reponse" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="790be34d-d846-4394-8f42-0e9ddfa82616" name="Default Changelist" comment="" />
+      <created>1682082978281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682082978281</updated>
+      <workItem from="1682082979391" duration="69052000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="562" y="117" key="#com.intellij.ide.util.MemberChooser" timestamp="1682293113254">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="562" y="117" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1682293113254" />
+    <state x="466" y="100" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1682292559223">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="466" y="100" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.816@0.0.1536.816" timestamp="1682292559223" />
+    <state x="499" y="163" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1682294169858">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="499" y="163" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.816@0.0.1536.816" timestamp="1682294169858" />
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1682290459169">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1682290459169" />
+    <state x="365" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1682253465676">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="365" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.816@0.0.1536.816" timestamp="1682253465676" />
+  </component>
+</project>
